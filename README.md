@@ -35,9 +35,7 @@ engineering objects, and the semantic views that relate them.
   disciplines are added as the ontology is applied to further railway projects.
   Later releases keep the same IRIs, so data written against release 1.0 stays
   valid.
-* Version 1.0 is the first public release: the terminology required by the
-  tunnel-portal case study of the paper, published under the persistent IRI
-  <https://w3id.org/rsdo>.
+* Version 1.0 is the first public release of RSDO, containing the ontology terminology required for the railway tunnel-portal case study. The ontology is assigned the IRI `https://w3id.org/rsdo`, with the version IRI `https://w3id.org/rsdo/1.0`. The corresponding persistent redirection has been requested through [Pull Request #7062](https://github.com/perma-id/w3id.org/pull/7062) and is currently pending approval.
 
 ## Files
 
@@ -109,15 +107,7 @@ wing-wall portals), `TunnelBodyElement`, `RockElement`,
 column, auxiliary retaining wall, wing wall, crown arch, sole plate, …).
 `bot:containsElement` attaches components to the spaces that contain them.
 
-**Attribute module** — attributes are attached to components and spaces with
-`bpo:hasAttribute`. Attributes whose value is a single literal carry it in
-`schema:value`; attributes that describe a range or an interval use
-`bpo:hasValue1` and `bpo:hasValue2`, with `bpo:permittedStepSize` for the step
-between admissible values. The module distinguishes professional attributes
-(control point, railway alignment, geological, tunnel, terrain, …) from shared
-attributes (functional, geometric, physical) so that they can be reused across
-disciplines; enumerated design values (rock grade, surrounding-rock class,
-traction type, …) are modelled as classes of the extended attribute branch.
+**Attribute module** — attributes are associated with components through bpo:hasAttribute. The module distinguishes between single-valued and range-valued attributes. Single-valued attributes are represented using rsdo:hasValue, a datatype property defined in RSDO. Range-valued attributes use bpo:hasValue1 and bpo:hasValue2 to specify their value ranges, with bpo:permittedStepSize defining the allowable increments. According to their scope of application, attributes are further classified into profession-specific attributes (e.g., control point, railway alignment, geological, tunnel, and topographical attributes) and shared attributes (e.g., functional, geometric, and physical attributes). This organization supports the consistent representation and reuse of design parameters across different railway engineering disciplines. The ontology also defines specialized attribute classes for categorical design information, such as rock grades, rock integrity classifications, and traction types.
 
 **Unit module** — reuses the QUDT ontology; its schema namespace
 `http://qudt.org/schema/qudt/` is declared as the `qudt` prefix of this
