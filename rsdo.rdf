@@ -1,0 +1,3908 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/rsdo#"
+     xml:base="https://w3id.org/rsdo"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:bot="https://w3id.org/bot#"
+     xmlns:bpo="https://w3id.org/bpo#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rsdo="https://w3id.org/rsdo#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/rsdo">
+        <owl:versionIRI rdf:resource="https://w3id.org/rsdo/1.0"/>
+        <owl:imports rdf:resource="https://w3id.org/bpo/1-2"/>
+        <dc:created>2025-06-10</dc:created>
+        <dc:creator>Qiang Du</dc:creator>
+        <dc:description xml:lang="en">The Railway Survey and Design Ontology (RSDO) is a modular ontology for railway survey and design information modelling. It is organised in five modules - spatial, complementary semantic, component, attribute and unit - and reuses the Building Topology Ontology (BOT) and the Building Product Ontology (BPO).</dc:description>
+        <dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
+        <dc:modified>2026-11-03</dc:modified>
+        <dc:title xml:lang="en">Railway Survey and Design Ontology (RSDO)</dc:title>
+        <dc:title xml:lang="zh">铁路勘测设计本体 (RSDO)</dc:title>
+        <vann:preferredNamespacePrefix>rsdo</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/rsdo#</vann:preferredNamespaceUri>
+        <rdfs:seeAlso>https://w3id.org/rsdo</rdfs:seeAlso>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/unit -->
+
+
+    <owl:ObjectProperty rdf:about="http://qudt.org/schema/qudt/unit"/>
+    
+
+
+    <!-- https://w3id.org/bpo#hasAttribute -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/bpo#hasAttribute"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwaySemanticBelongsTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#RailwaySemanticBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#semanticBelongsTo"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/rsdo#hasRailwaySemantic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasProfessionSemantic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#hasProfessionSemantic">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#hasSemantic"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/rsdo#professionSemanticBelongsTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rsdo#ProfessionSpace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasProjectSemantic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#hasProjectSemantic">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#hasSemantic"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/rsdo#projectSemanticBelongsTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rsdo#ProjectSpace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasRailwaySemantic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#hasRailwaySemantic">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#hasSemantic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasSemantic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#hasSemantic">
+        <owl:inverseOf rdf:resource="https://w3id.org/rsdo#semanticBelongsTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/bot#Zone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasUnit -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#hasUnit">
+        <rdfs:subPropertyOf rdf:resource="http://qudt.org/schema/qudt/unit"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rsdo#Quantity"/>
+        <rdfs:range rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:comment xml:lang="en">Attaches a quantity attribute to its unit of measure; a sub-property of qudt:unit, ranging over QUDT unit individuals such as unit:MPA, unit:M, unit:MilliM or unit:DEG.</rdfs:comment>
+        <rdfs:comment xml:lang="zh">将量值型属性与其计量单位关联，是 qudt:unit 的子属性；单位个体来自 QUDT。</rdfs:comment>
+        <rdfs:label xml:lang="en">has unit of measure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#professionSemanticBelongsTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#professionSemanticBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#projectSemanticBelongsTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#projectSemanticBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#semanticBelongsTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rsdo#semanticBelongsTo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/rsdo#hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rsdo#hasValue">
+        <rdfs:domain rdf:resource="https://w3id.org/bpo#Attribute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasXCoordinate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rsdo#hasXCoordinate"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasYCoordinate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rsdo#hasYCoordinate"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#hasZCoordinate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rsdo#hasZCoordinate"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#isInScenicAreaOrTown -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rsdo#isInScenicAreaOrTown">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Quantity -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Quantity"/>
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Unit -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
+    
+
+
+    <!-- https://w3id.org/bot#Building -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Building"/>
+    
+
+
+    <!-- https://w3id.org/bot#Site -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Site"/>
+    
+
+
+    <!-- https://w3id.org/bot#Space -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Space"/>
+    
+
+
+    <!-- https://w3id.org/bot#Storey -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Storey"/>
+    
+
+
+    <!-- https://w3id.org/bot#Zone -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bot#Zone"/>
+    
+
+
+    <!-- https://w3id.org/bpo#Attribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bpo#Attribute"/>
+    
+
+
+    <!-- https://w3id.org/bpo#Element -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bpo#Element"/>
+    
+
+
+    <!-- https://w3id.org/bpo#RangedAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/bpo#RangedAttribute"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#AA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#AA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#AB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#AB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#AbstractElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#AbstractElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bpo#Element"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#SolidElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Angle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Angle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Area -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Area">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BallastedTrack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BallastedTrack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Track"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#BallastlessTrack"/>
+        <rdfs:comment>有无砟道床的是无砟轨道</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BallastlessTrack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BallastlessTrack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Track"/>
+        <rdfs:comment>有碎石道床的是有砟轨道</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BeamBottomToPierTopHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BeamBottomToPierTopHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BeamJointWidth -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BeamJointWidth">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Width"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BearingQuantity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BearingQuantity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BearingStoneCalculatedHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BearingStoneCalculatedHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BearingToJointCenterlineDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BearingToJointCenterlineDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Blocky -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Blocky">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BlockyStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BlockyStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Bridge -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Bridge">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#BridgeCrossSectionElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#BridgeCrossSectionElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#BallastlessTrack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#BallastlessTrack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#BallastlessTrack"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Capacity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Capacity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ChemicalAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ChemicalAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Columnar -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Columnar">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CombinedTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CombinedTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Complete -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Complete">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CompletelyWeathered -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CompletelyWeathered">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Composition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Composition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#MaterialAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ControlPointAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ControlPointAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ConventionalSpeedRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ConventionalSpeedRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownArchElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownArchElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownTopCenterAngle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownTopCenterAngle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownTopRadius -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownTopRadius">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Radius"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownWaistCenterAngle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownWaistCenterAngle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CrownWaistRadius -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CrownWaistRadius">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Radius"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CurveRadius -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CurveRadius">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Radius"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CurveWallPointToBottomDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CurvedTangentTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CurvedTangentTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#CutAndCoverStructureElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#CutAndCoverStructureElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#DA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#DA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#DB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#DB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#DebrisLike -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#DebrisLike">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Dense -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Dense">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Density -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Density">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Depth -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Depth">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#DesignTrackElevation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#DesignTrackElevation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Elevation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Diesel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Diesel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#Electric"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Distance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Distance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Duststorm -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Duststorm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#DuststormElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#DuststormElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#EA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#EA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#EB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#EB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Earthquake -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#EarthquakeElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#EarthquakeElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#EavesCutTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#EavesCutTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Efficiency -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Efficiency">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Elasticity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Elasticity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#MaterialAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Electric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Electric">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Elevation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Elevation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#EndWallTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#EndWallTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ExtraThickLayer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ExtraThickLayer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ExtremelyFragmented -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ExtremelyFragmented">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ExtremelyPoor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ExtremelyPoor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ExtremelySoftRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ExtremelySoftRock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FA -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FA">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FB -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FB">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FlowRate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FlowRate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FlowablePlastic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FlowablePlastic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FracturedStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FracturedStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Fragmented -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Fragmented">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FragmentedBlocky -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FragmentedBlocky">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FreightRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FreightRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FreightTransport -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FreightTransport">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FrostHeaving -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FrostHeaving">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FrostHeavingElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FrostHeavingElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#FunctionalAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#FunctionalAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GeologicalAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GeologicalAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GeologicalDisasterElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GeologicalDisasterElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Geology -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Geology">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GeologyElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GeologyElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SolidElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GeometricAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GeometricAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GiantBlocky -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GiantBlocky">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Good -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Good">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GradeⅠRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GradeⅠRock">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Complete"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#HardRock"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GradeⅡRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GradeⅡRock">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Complete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyHardRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#HardRock"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyComplete"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GradeⅢRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GradeⅢRock">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Complete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelySoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#HardRock"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyFragmented"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyComplete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyHardRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GradeⅣRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GradeⅣRock">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Complete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#SoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Fragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyHardRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyComplete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelySoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyComplete"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#SoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyFragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyHardRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyFragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelySoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GradeⅤRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GradeⅤRock">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#ExtremelyFragmented"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#ExtremelySoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Fragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelySoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#Fragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#SoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/rsdo#RockElement"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#RelativelyFragmented"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/bpo#hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/rsdo#SoftRock"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#GranularStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#GranularStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Hard -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Hard">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#HardPlastic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#HardPlastic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#HardRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#HardRock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Hardness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Hardness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Height -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Height">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#HighSpeedRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#HighSpeedRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Hydrology -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Hydrology">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#IndexAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#IndexAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InitialTotalHeightOfBridgePier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourCenterQuantity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourCenterQuantity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourCrownPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourCrownPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourLeftArchFootPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourLeftArchFootPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourLeftArchWaistPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourLeftArchWaistPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourMaxSpanPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourMaxSpanPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourMinSpanPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourMinSpanPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourOffsetThickness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourOffsetThickness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Thickness"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#SingleLayerThickness"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourRightArchFootPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourRightArchFootPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#InnerContourRightArchWaistPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#InnerContourRightArchWaistPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#IntegrityIndex -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#IntegrityIndex">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#IndexAttribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#LiquidityIndex"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#IntenseWeathering -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#IntenseWeathering">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Intensity6Earthquake -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Intensity6Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Earthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Intensity7Earthquake -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Intensity7Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Earthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Intensity8Earthquake -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Intensity8Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Earthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Intensity9Earthquake -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Intensity9Earthquake">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Earthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#IntercityRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#IntercityRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#KarstDisasters -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#KarstDisasters">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#KarstDisastersElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#KarstDisastersElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Landslide -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Landslide">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LandslideElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LandslideElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LargeMileBearingStoneHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LargeMileBearingStoneHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LateralPressureTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LateralPressureTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Layered -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Layered">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LayeredStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LayeredStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LeftPierColumnElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LeftPierColumnElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LeftSideWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LeftSideWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LeftWingWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LeftWingWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Length -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Length">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningCrossSectionElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningCrossSectionElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+        <rdfs:comment>是否还能分的更细</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningLeftArchWaistPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningLeftArchWaistPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningRightArchWaistPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningRightArchWaistPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningRightCurvedSideWallPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningRightCurvedSideWallPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiningTopCrownRingPoint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiningTopCrownRingPoint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LiquidityIndex -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LiquidityIndex">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#IndexAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LongitudinalBearingCenterDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LongitudinalBearingCenterDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LongitudinalSlabLength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LongitudinalSlabLength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Length"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#LongitudinalSlope -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#LongitudinalSlope">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Ratio"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MainEndWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MainEndWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Mass -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Mass">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MaterialAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MaterialAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MaterialType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MaterialType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#MaterialAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MedianWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MedianWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MediumDensity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MediumDensity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MediumThickLayer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MediumThickLayer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MilepostNumber -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MilepostNumber">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ModerateWeathering -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ModerateWeathering">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Mudflow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Mudflow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#MudflowElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#MudflowElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ObliqueIntersectionAngle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ObliqueIntersectionAngle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Angle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ObliqueToTunnelAxis -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ObliqueToTunnelAxis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#OrthogonalToTunnelAxis"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#OrthogonalToTunnelAxis -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#OrthogonalToTunnelAxis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PassengerAndFreightCoexistence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PassengerAndFreightCoexistence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PassengerDedicatedLineRailway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PassengerDedicatedLineRailway">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Railway"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PassengerTransport -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PassengerTransport">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PeakAcceleration -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PeakAcceleration">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PhysicalAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PhysicalAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PierHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PierHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PillarTypeTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PillarTypeTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Plastic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Plastic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#PlasticityIndex -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#PlasticityIndex">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#IndexAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Platy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Platy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Poor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Poor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Porosity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Porosity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProfessionAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProfessionAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bpo#Attribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProfessionDesign -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProfessionDesign">
+        <rdfs:comment>选型采用定义类，非选型采用的普通类</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProfessionRangedAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProfessionRangedAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bpo#RangedAttribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#SharedRangedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProfessionSpace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProfessionSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProfessionSurvey -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProfessionSurvey">
+        <rdfs:comment>选型采用定义类，非选型采用的普通类</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProjectDesign -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProjectDesign"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProjectSpace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProjectSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ProjectSurvey -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ProjectSurvey"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#Quantity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Quantity">
+        <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+        <rdfs:comment xml:lang="en">Unit module: a quantity attribute is a QUDT quantity, so its unit is assigned with qudt:unit (through rsdo:hasUnit) and its value with the attribute-value properties.</rdfs:comment>
+        <rdfs:comment xml:lang="zh">单位模块：量值型物理属性属于 QUDT 量，其单位用 qudt:unit（经 rsdo:hasUnit）关联到 QUDT 单位个体。</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RQD -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RQD">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#IndexAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Radius -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Radius">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Railway -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Railway"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLine -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLine">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLine20082301 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLine20082301">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLine20112351-Ⅲ -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLine20112351-Ⅲ">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLine20182332 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLine20182332">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineCrossSectionElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineCrossSectionElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineQuantity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineQuantity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineTractionTypeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RailwaySpace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RailwaySpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bot#Zone"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Ratio -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Ratio">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelyComplete -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelyComplete">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelyFragmented -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelyFragmented">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelyGood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelyGood">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelyHardRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelyHardRock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelyPoor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelyPoor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RelativelySoftRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RelativelySoftRock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ResidualSoil -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ResidualSoil">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ReverseCutTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ReverseCutTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RightPierColumnElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RightPierColumnElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RightSideWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RightSideWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RightWingWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RightWingWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalAttribute"/>
+        <rdfs:comment>自带</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologyElement"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#SoilElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockHardnessDegreeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockHardnessDegreeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockIntegrityDegreeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockIntegrityDegreeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockLayerThicknessAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockLayerThicknessAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockQualityAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockQualityAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockStructuralShapeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockStructuralShapeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockStructureTypeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockStructureTypeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockWeatheringDegreeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockWeatheringDegreeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Rockfall -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Rockfall">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#RockfallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#RockfallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Strength"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ShapeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ShapeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SharedAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SharedAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bpo#Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SharedRangedAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SharedRangedAttribute"/>
+    
+
+
+    <!-- https://w3id.org/rsdo#SimplySupportedBoxGirderLength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SimplySupportedBoxGirderLength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Length"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SingleLayerThickness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SingleLayerThickness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Thickness"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SinglePressureTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SinglePressureTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Size -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Size">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SlightWeathering -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SlightWeathering">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SlightlyDense -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SlightlyDense">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SlightlyWet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SlightlyWet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SlopeRatio -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SlopeRatio">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Ratio"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#WaterContent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SmallMileBearingStoneHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SmallMileBearingStoneHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoftPlastic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoftPlastic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoftRock -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoftRock">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoilAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoilAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoilCompactionDegreeAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoilCompactionDegreeAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoilElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoilElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologyElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoilMoistureContentAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoilMoistureContentAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SoilStateAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SoilStateAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SolePlateElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SolePlateElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SolidElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SolidElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/bpo#Element"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SolidStructure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SolidStructure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Speed -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Speed">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SteepTerrain -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SteepTerrain">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Topography"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#StepQuantity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#StepQuantity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SteppedEndWallElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SteppedEndWallElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SteppedTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SteppedTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#StraightCutTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#StraightCutTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Strength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Strength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#MaterialAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#StructuralAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#StructuralAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Subsidence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Subsidence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#SubsidenceElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#SubsidenceElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TangentialTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TangentialTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Temperature -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Temperature">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TemperatureControl -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TemperatureControl">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TemporalAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TemporalAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SharedAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Texture -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Texture">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#MaterialAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ThickLayer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ThickLayer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Thickness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Thickness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#ThinLayer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#ThinLayer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Topography -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Topography">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TopographyAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TopographyAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TopographyElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TopographyElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TopographyPosition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TopographyPosition">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TopographyAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Track -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Track">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TrackElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TrackElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SolidElement"/>
+        <rdfs:comment>这里只抽象出了一个构件，没有按照IFD扩展</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TrackHeight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TrackHeight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Height"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TrackLineProjectionElevation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TrackLineProjectionElevation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Elevation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TransverseBearingCenterDistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TransverseBearingCenterDistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TransverseSlabLength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TransverseSlabLength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Length"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TruncatedHornCutTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TruncatedHornCutTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel0201InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel0201InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel0301InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel0301InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel1001InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel1001InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel1002InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel1002InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel1201InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel1201InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Tunnel1202InnerContour -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Tunnel1202InnerContour">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelBodyElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelBodyElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SolidElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelInnerContourElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelInnerContourElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#AbstractElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelAttribute"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelPortalElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelPortalElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SolidElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Unweathered -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Unweathered">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#VeryWet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#VeryWet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#VolcanicEruption -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#VolcanicEruption">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#ProjectSurvey"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#VolcanicEruptionElement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#VolcanicEruptionElement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Volume -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Volume">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#WaterContent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#WaterContent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Ratio"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#WaveSpeedRatioKv -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#WaveSpeedRatioKv">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#Ratio"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Weight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Weight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Wet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Wet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#Width -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#Width">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#GeometricAttribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rsdo#WingWallTunnelPortal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rsdo#WingWallTunnelPortal">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rsdo#TunnelPortal"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/bot#Building"/>
+            <rdf:Description rdf:about="https://w3id.org/bot#Site"/>
+            <rdf:Description rdf:about="https://w3id.org/bot#Space"/>
+            <rdf:Description rdf:about="https://w3id.org/bot#Storey"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProfessionSpace"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProjectSpace"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwaySpace"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Angle"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Area"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Depth"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Distance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Elevation"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Height"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Length"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Radius"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Thickness"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Volume"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Width"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PierHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TrackHeight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TrackHeight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TrackHeight"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingQuantity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineQuantity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#StepQuantity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BearingToJointCenterlineDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Blocky"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Columnar"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#DebrisLike"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FragmentedBlocky"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#GiantBlocky"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Layered"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Platy"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BlockyStructure"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FracturedStructure"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#GranularStructure"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LayeredStructure"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SolidStructure"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Bridge"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLine"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Track"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#BridgeCrossSectionElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TopographyElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Capacity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Efficiency"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FlowRate"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Speed"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TemperatureControl"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ChemicalAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FunctionalAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#GeometricAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#IndexAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PhysicalAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ShapeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TemporalAttribute"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Complete"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ExtremelyFragmented"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Fragmented"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelyComplete"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelyFragmented"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CompletelyWeathered"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#IntenseWeathering"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ModerateWeathering"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ResidualSoil"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SlightWeathering"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Unweathered"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Composition"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Elasticity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MaterialType"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Strength"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Texture"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownArchElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CutAndCoverStructureElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SolePlateElement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopCenterAngle"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownWaistCenterAngle"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ObliqueIntersectionAngle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopRadius"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownWaistRadius"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveRadius"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineDistance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineDistance"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Dense"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MediumDensity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SlightlyDense"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Duststorm"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Earthquake"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FrostHeaving"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#KarstDisasters"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Landslide"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Mudflow"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Rockfall"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Subsidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#VolcanicEruption"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ExtraThickLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MediumThickLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ThickLayer"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ThinLayer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ExtremelyPoor"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Good"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Poor"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelyGood"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelyPoor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ExtremelySoftRock"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#HardRock"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelyHardRock"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RelativelySoftRock"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SoftRock"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FlowablePlastic"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Hard"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#HardPlastic"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Plastic"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SoftPlastic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#FreightTransport"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PassengerAndFreightCoexistence"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PassengerTransport"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineQuantity"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#StepQuantity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#IntegrityIndex"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LiquidityIndex"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PlasticityIndex"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#IntegrityIndex"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LiquidityIndex"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#PlasticityIndex"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RQD"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LeftPierColumnElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LeftSideWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LeftWingWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MainEndWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MedianWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RightPierColumnElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RightSideWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RightWingWallElement"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SteppedEndWallElement"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#LongitudinalSlope"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SlopeRatio"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#WaterContent"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#WaveSpeedRatioKv"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#MilepostNumber"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProfessionDesign"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProfessionSurvey"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProjectDesign"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#ProjectSurvey"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Railway"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLine20082301"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLine20112351-Ⅲ"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RailwayLine20182332"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockQualityAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#SlightlyWet"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#VeryWet"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Wet"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel0201InnerContour"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel0301InnerContour"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel1001InnerContour"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel1002InnerContour"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel1201InnerContour"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#Tunnel1202InnerContour"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4"/>
+            <rdf:Description rdf:about="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.20) https://github.com/owlcs/owlapi/ -->
+
+

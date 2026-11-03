@@ -1,0 +1,1786 @@
+Prefix(:=<http://www.w3.org/2002/07/owl#>)
+Prefix(dc:=<http://purl.org/dc/terms/>)
+Prefix(bot:=<https://w3id.org/bot#>)
+Prefix(bpo:=<https://w3id.org/bpo#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(qudt:=<http://qudt.org/schema/qudt/>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(rsdo:=<https://w3id.org/rsdo#>)
+Prefix(vann:=<http://purl.org/vocab/vann/>)
+Prefix(schema:=<https://schema.org/>)
+
+
+Ontology(<https://w3id.org/rsdo>
+<https://w3id.org/rsdo/1.0>
+Import(<https://w3id.org/bpo/1-2>)
+Annotation(dc:created "2025-06-10")
+Annotation(dc:creator "Qiang Du")
+Annotation(dc:description "The Railway Survey and Design Ontology (RSDO) is a modular ontology for railway survey and design information modelling. It is organised in five modules - spatial, complementary semantic, component, attribute and unit - and reuses the Building Topology Ontology (BOT) and the Building Product Ontology (BPO)."@en)
+Annotation(dc:license "https://creativecommons.org/licenses/by/4.0/")
+Annotation(dc:modified "2026-11-03")
+Annotation(dc:title "Railway Survey and Design Ontology (RSDO)"@en)
+Annotation(dc:title "铁路勘测设计本体 (RSDO)"@zh)
+Annotation(vann:preferredNamespacePrefix "rsdo")
+Annotation(vann:preferredNamespaceUri "https://w3id.org/rsdo#")
+Annotation(rdfs:seeAlso "https://w3id.org/rsdo")
+Annotation(owl:versionInfo "1.0")
+
+Declaration(Class(qudt:Quantity))
+Declaration(Class(qudt:Unit))
+Declaration(Class(bot:Building))
+Declaration(Class(bot:Site))
+Declaration(Class(bot:Space))
+Declaration(Class(bot:Storey))
+Declaration(Class(bot:Zone))
+Declaration(Class(bpo:Attribute))
+Declaration(Class(bpo:Element))
+Declaration(Class(bpo:RangedAttribute))
+Declaration(Class(rsdo:AA))
+Declaration(Class(rsdo:AB))
+Declaration(Class(rsdo:AbstractElement))
+Declaration(Class(rsdo:Angle))
+Declaration(Class(rsdo:Area))
+Declaration(Class(rsdo:BA))
+Declaration(Class(rsdo:BB))
+Declaration(Class(rsdo:BallastedTrack))
+Declaration(Class(rsdo:BallastlessTrack))
+Declaration(Class(rsdo:BeamBottomToBearingStoneTopHeight))
+Declaration(Class(rsdo:BeamBottomToPierTopHeight))
+Declaration(Class(rsdo:BeamJointWidth))
+Declaration(Class(rsdo:BearingQuantity))
+Declaration(Class(rsdo:BearingStoneCalculatedHeight))
+Declaration(Class(rsdo:BearingToJointCenterlineDistance))
+Declaration(Class(rsdo:Blocky))
+Declaration(Class(rsdo:BlockyStructure))
+Declaration(Class(rsdo:BottomAndTrackFoundationLeftIntersection))
+Declaration(Class(rsdo:BottomAndTrackFoundationRightIntersection))
+Declaration(Class(rsdo:Bridge))
+Declaration(Class(rsdo:BridgeCrossSectionElement))
+Declaration(Class(rsdo:CA))
+Declaration(Class(rsdo:CB))
+Declaration(Class(rsdo:CRTSⅠDoubleBlockBallastlessTrack))
+Declaration(Class(rsdo:CRTSⅠSlabBallastlessTrack))
+Declaration(Class(rsdo:CRTSⅢSlabBallastlessTrack))
+Declaration(Class(rsdo:Capacity))
+Declaration(Class(rsdo:ChemicalAttribute))
+Declaration(Class(rsdo:Columnar))
+Declaration(Class(rsdo:CombinedTunnelPortal))
+Declaration(Class(rsdo:Complete))
+Declaration(Class(rsdo:CompletelyWeathered))
+Declaration(Class(rsdo:Composition))
+Declaration(Class(rsdo:ControlPointAttribute))
+Declaration(Class(rsdo:ConventionalSpeedRailway))
+Declaration(Class(rsdo:CrownArchElement))
+Declaration(Class(rsdo:CrownTopCenterAngle))
+Declaration(Class(rsdo:CrownTopRadius))
+Declaration(Class(rsdo:CrownTopToTrackSurfaceDistance))
+Declaration(Class(rsdo:CrownWaistCenterAngle))
+Declaration(Class(rsdo:CrownWaistRadius))
+Declaration(Class(rsdo:CurveRadius))
+Declaration(Class(rsdo:CurveWallPointToBottomDistance))
+Declaration(Class(rsdo:CurvedTangentTunnelPortal))
+Declaration(Class(rsdo:CutAndCoverStructureElement))
+Declaration(Class(rsdo:DA))
+Declaration(Class(rsdo:DB))
+Declaration(Class(rsdo:DebrisLike))
+Declaration(Class(rsdo:Dense))
+Declaration(Class(rsdo:Density))
+Declaration(Class(rsdo:Depth))
+Declaration(Class(rsdo:DesignTrackElevation))
+Declaration(Class(rsdo:Diesel))
+Declaration(Class(rsdo:Distance))
+Declaration(Class(rsdo:Duststorm))
+Declaration(Class(rsdo:DuststormElement))
+Declaration(Class(rsdo:EA))
+Declaration(Class(rsdo:EB))
+Declaration(Class(rsdo:Earthquake))
+Declaration(Class(rsdo:EarthquakeElement))
+Declaration(Class(rsdo:EavesCutTunnelPortal))
+Declaration(Class(rsdo:Efficiency))
+Declaration(Class(rsdo:Elasticity))
+Declaration(Class(rsdo:Electric))
+Declaration(Class(rsdo:Elevation))
+Declaration(Class(rsdo:EndWallTunnelPortal))
+Declaration(Class(rsdo:ExtraThickLayer))
+Declaration(Class(rsdo:ExtremelyFragmented))
+Declaration(Class(rsdo:ExtremelyPoor))
+Declaration(Class(rsdo:ExtremelySoftRock))
+Declaration(Class(rsdo:FA))
+Declaration(Class(rsdo:FB))
+Declaration(Class(rsdo:FlowRate))
+Declaration(Class(rsdo:FlowablePlastic))
+Declaration(Class(rsdo:FracturedStructure))
+Declaration(Class(rsdo:Fragmented))
+Declaration(Class(rsdo:FragmentedBlocky))
+Declaration(Class(rsdo:FreightRailway))
+Declaration(Class(rsdo:FreightTransport))
+Declaration(Class(rsdo:FrostHeaving))
+Declaration(Class(rsdo:FrostHeavingElement))
+Declaration(Class(rsdo:FunctionalAttribute))
+Declaration(Class(rsdo:GeologicalAttribute))
+Declaration(Class(rsdo:GeologicalDisasterElement))
+Declaration(Class(rsdo:Geology))
+Declaration(Class(rsdo:GeologyElement))
+Declaration(Class(rsdo:GeometricAttribute))
+Declaration(Class(rsdo:GiantBlocky))
+Declaration(Class(rsdo:Good))
+Declaration(Class(rsdo:GradeⅠRock))
+Declaration(Class(rsdo:GradeⅡRock))
+Declaration(Class(rsdo:GradeⅢRock))
+Declaration(Class(rsdo:GradeⅣRock))
+Declaration(Class(rsdo:GradeⅤRock))
+Declaration(Class(rsdo:GranularStructure))
+Declaration(Class(rsdo:Hard))
+Declaration(Class(rsdo:HardPlastic))
+Declaration(Class(rsdo:HardRock))
+Declaration(Class(rsdo:Hardness))
+Declaration(Class(rsdo:Height))
+Declaration(Class(rsdo:HighSpeedRailway))
+Declaration(Class(rsdo:Hydrology))
+Declaration(Class(rsdo:IndexAttribute))
+Declaration(Class(rsdo:InitialTotalHeightOfBridgePier))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeLeftIntersection))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeLeftLowerIntersection))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeLeftUpperIntersection))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeRightIntersection))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeRightLowerIntersection))
+Declaration(Class(rsdo:InnerContourAndBaseFlangeRightUpperIntersection))
+Declaration(Class(rsdo:InnerContourCenterQuantity))
+Declaration(Class(rsdo:InnerContourCrownPoint))
+Declaration(Class(rsdo:InnerContourHeight))
+Declaration(Class(rsdo:InnerContourLeftArchFootPoint))
+Declaration(Class(rsdo:InnerContourLeftArchWaistPoint))
+Declaration(Class(rsdo:InnerContourMaxSpanPoint))
+Declaration(Class(rsdo:InnerContourMinSpanPoint))
+Declaration(Class(rsdo:InnerContourOffsetThickness))
+Declaration(Class(rsdo:InnerContourRightArchFootPoint))
+Declaration(Class(rsdo:InnerContourRightArchWaistPoint))
+Declaration(Class(rsdo:IntegrityIndex))
+Declaration(Class(rsdo:IntenseWeathering))
+Declaration(Class(rsdo:Intensity6Earthquake))
+Declaration(Class(rsdo:Intensity7Earthquake))
+Declaration(Class(rsdo:Intensity8Earthquake))
+Declaration(Class(rsdo:Intensity9Earthquake))
+Declaration(Class(rsdo:IntercityRailway))
+Declaration(Class(rsdo:KarstDisasters))
+Declaration(Class(rsdo:KarstDisastersElement))
+Declaration(Class(rsdo:Landslide))
+Declaration(Class(rsdo:LandslideElement))
+Declaration(Class(rsdo:LargeMileBearingStoneHeight))
+Declaration(Class(rsdo:LateralPressureTunnelPortal))
+Declaration(Class(rsdo:Layered))
+Declaration(Class(rsdo:LayeredStructure))
+Declaration(Class(rsdo:LeftAuxiliaryRetainingWallElement))
+Declaration(Class(rsdo:LeftPierColumnElement))
+Declaration(Class(rsdo:LeftSideWallElement))
+Declaration(Class(rsdo:LeftWingWallElement))
+Declaration(Class(rsdo:Length))
+Declaration(Class(rsdo:LiningCrossSectionElement))
+Declaration(Class(rsdo:LiningInvertedArchMaxBuriedDepthPoint))
+Declaration(Class(rsdo:LiningInvertedArchSegmentLeftPoint))
+Declaration(Class(rsdo:LiningInvertedArchSegmentRightPoint))
+Declaration(Class(rsdo:LiningLeftArchWaistPoint))
+Declaration(Class(rsdo:LiningLeftCurvedSideWallPoint))
+Declaration(Class(rsdo:LiningLeftTransformationArcSegmentPoint))
+Declaration(Class(rsdo:LiningLeftTransitionArcSegmentPoint))
+Declaration(Class(rsdo:LiningRightArchWaistPoint))
+Declaration(Class(rsdo:LiningRightCurvedSideWallPoint))
+Declaration(Class(rsdo:LiningRightTransformationArcSegmentPoint))
+Declaration(Class(rsdo:LiningRightTransitionArcSegmentPoint))
+Declaration(Class(rsdo:LiningTopCrownRingPoint))
+Declaration(Class(rsdo:LiquidityIndex))
+Declaration(Class(rsdo:LongitudinalBearingCenterDistance))
+Declaration(Class(rsdo:LongitudinalBearingToBeamEndDistance))
+Declaration(Class(rsdo:LongitudinalSlabLength))
+Declaration(Class(rsdo:LongitudinalSlope))
+Declaration(Class(rsdo:MainEndWallElement))
+Declaration(Class(rsdo:Mass))
+Declaration(Class(rsdo:MaterialAttribute))
+Declaration(Class(rsdo:MaterialType))
+Declaration(Class(rsdo:MedianWallElement))
+Declaration(Class(rsdo:MediumDensity))
+Declaration(Class(rsdo:MediumThickLayer))
+Declaration(Class(rsdo:MilepostNumber))
+Declaration(Class(rsdo:ModerateWeathering))
+Declaration(Class(rsdo:Mudflow))
+Declaration(Class(rsdo:MudflowElement))
+Declaration(Class(rsdo:ObliqueIntersectionAngle))
+Declaration(Class(rsdo:ObliqueToTunnelAxis))
+Declaration(Class(rsdo:OrthogonalToTunnelAxis))
+Declaration(Class(rsdo:PassengerAndFreightCoexistence))
+Declaration(Class(rsdo:PassengerAndFreightCoexistingRailway))
+Declaration(Class(rsdo:PassengerDedicatedLineRailway))
+Declaration(Class(rsdo:PassengerTransport))
+Declaration(Class(rsdo:PeakAcceleration))
+Declaration(Class(rsdo:PhysicalAttribute))
+Declaration(Class(rsdo:PierHeight))
+Declaration(Class(rsdo:PillarTypeTunnelPortal))
+Declaration(Class(rsdo:Plastic))
+Declaration(Class(rsdo:PlasticityIndex))
+Declaration(Class(rsdo:Platy))
+Declaration(Class(rsdo:Poor))
+Declaration(Class(rsdo:Porosity))
+Declaration(Class(rsdo:ProfessionAttribute))
+Declaration(Class(rsdo:ProfessionDesign))
+Declaration(Class(rsdo:ProfessionRangedAttribute))
+Declaration(Class(rsdo:ProfessionSpace))
+Declaration(Class(rsdo:ProfessionSurvey))
+Declaration(Class(rsdo:ProjectDesign))
+Declaration(Class(rsdo:ProjectSpace))
+Declaration(Class(rsdo:ProjectSurvey))
+Declaration(Class(rsdo:Quantity))
+Declaration(Class(rsdo:RQD))
+Declaration(Class(rsdo:Radius))
+Declaration(Class(rsdo:Railway))
+Declaration(Class(rsdo:RailwayLine))
+Declaration(Class(rsdo:RailwayLine20082301))
+Declaration(Class(rsdo:RailwayLine20112351-Ⅲ))
+Declaration(Class(rsdo:RailwayLine20182332))
+Declaration(Class(rsdo:RailwayLineAttribute))
+Declaration(Class(rsdo:RailwayLineCrossSectionElement))
+Declaration(Class(rsdo:RailwayLineDistance))
+Declaration(Class(rsdo:RailwayLineElement))
+Declaration(Class(rsdo:RailwayLineQuantity))
+Declaration(Class(rsdo:RailwayLineTractionTypeAttribute))
+Declaration(Class(rsdo:RailwayLineUsageAndFunctionAttribute))
+Declaration(Class(rsdo:RailwaySpace))
+Declaration(Class(rsdo:Ratio))
+Declaration(Class(rsdo:RelativelyComplete))
+Declaration(Class(rsdo:RelativelyFragmented))
+Declaration(Class(rsdo:RelativelyGood))
+Declaration(Class(rsdo:RelativelyHardRock))
+Declaration(Class(rsdo:RelativelyPoor))
+Declaration(Class(rsdo:RelativelySoftRock))
+Declaration(Class(rsdo:ResidualSoil))
+Declaration(Class(rsdo:ReverseCutTunnelPortal))
+Declaration(Class(rsdo:RightAuxiliaryRetainingWallElement))
+Declaration(Class(rsdo:RightPierColumnElement))
+Declaration(Class(rsdo:RightSideWallElement))
+Declaration(Class(rsdo:RightWingWallElement))
+Declaration(Class(rsdo:RockAttribute))
+Declaration(Class(rsdo:RockElement))
+Declaration(Class(rsdo:RockHardnessDegreeAttribute))
+Declaration(Class(rsdo:RockIntegrityDegreeAttribute))
+Declaration(Class(rsdo:RockLayerThicknessAttribute))
+Declaration(Class(rsdo:RockQualityAttribute))
+Declaration(Class(rsdo:RockStructuralShapeAttribute))
+Declaration(Class(rsdo:RockStructureTypeAttribute))
+Declaration(Class(rsdo:RockWeatheringDegreeAttribute))
+Declaration(Class(rsdo:Rockfall))
+Declaration(Class(rsdo:RockfallElement))
+Declaration(Class(rsdo:SaturatedUniaxialCompressiveStrength))
+Declaration(Class(rsdo:ShapeAttribute))
+Declaration(Class(rsdo:SharedAttribute))
+Declaration(Class(rsdo:SharedRangedAttribute))
+Declaration(Class(rsdo:SimplySupportedBoxGirderLength))
+Declaration(Class(rsdo:SingleLayerThickness))
+Declaration(Class(rsdo:SinglePressureTunnelPortal))
+Declaration(Class(rsdo:Size))
+Declaration(Class(rsdo:SlightWeathering))
+Declaration(Class(rsdo:SlightlyDense))
+Declaration(Class(rsdo:SlightlyWet))
+Declaration(Class(rsdo:SlopeRatio))
+Declaration(Class(rsdo:SmallMileBearingStoneHeight))
+Declaration(Class(rsdo:SoftPlastic))
+Declaration(Class(rsdo:SoftRock))
+Declaration(Class(rsdo:SoilAttribute))
+Declaration(Class(rsdo:SoilCompactionDegreeAttribute))
+Declaration(Class(rsdo:SoilElement))
+Declaration(Class(rsdo:SoilMoistureContentAttribute))
+Declaration(Class(rsdo:SoilStateAttribute))
+Declaration(Class(rsdo:SolePlateElement))
+Declaration(Class(rsdo:SolidElement))
+Declaration(Class(rsdo:SolidStructure))
+Declaration(Class(rsdo:Speed))
+Declaration(Class(rsdo:SteepTerrain))
+Declaration(Class(rsdo:StepQuantity))
+Declaration(Class(rsdo:SteppedEndWallElement))
+Declaration(Class(rsdo:SteppedTunnelPortal))
+Declaration(Class(rsdo:StraightCutTunnelPortal))
+Declaration(Class(rsdo:Strength))
+Declaration(Class(rsdo:StructuralAttribute))
+Declaration(Class(rsdo:SubgradeBoxGirderSectionHeight))
+Declaration(Class(rsdo:Subsidence))
+Declaration(Class(rsdo:SubsidenceElement))
+Declaration(Class(rsdo:TangentialTunnelPortal))
+Declaration(Class(rsdo:Temperature))
+Declaration(Class(rsdo:TemperatureControl))
+Declaration(Class(rsdo:TemporalAttribute))
+Declaration(Class(rsdo:Texture))
+Declaration(Class(rsdo:ThickLayer))
+Declaration(Class(rsdo:Thickness))
+Declaration(Class(rsdo:ThinLayer))
+Declaration(Class(rsdo:Topography))
+Declaration(Class(rsdo:TopographyAttribute))
+Declaration(Class(rsdo:TopographyElement))
+Declaration(Class(rsdo:TopographyPosition))
+Declaration(Class(rsdo:Track))
+Declaration(Class(rsdo:TrackElement))
+Declaration(Class(rsdo:TrackHeight))
+Declaration(Class(rsdo:TrackLineProjectionElevation))
+Declaration(Class(rsdo:TransverseBearingCenterDistance))
+Declaration(Class(rsdo:TransverseSlabLength))
+Declaration(Class(rsdo:TruncatedHornCutTunnelPortal))
+Declaration(Class(rsdo:Tunnel))
+Declaration(Class(rsdo:Tunnel0201InnerContour))
+Declaration(Class(rsdo:Tunnel0301InnerContour))
+Declaration(Class(rsdo:Tunnel1001InnerContour))
+Declaration(Class(rsdo:Tunnel1002InnerContour))
+Declaration(Class(rsdo:Tunnel1201InnerContour))
+Declaration(Class(rsdo:Tunnel1202InnerContour))
+Declaration(Class(rsdo:TunnelAttribute))
+Declaration(Class(rsdo:TunnelBodyElement))
+Declaration(Class(rsdo:TunnelInnerContourElement))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRule1))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRule2))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRule3))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRule4))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRule5))
+Declaration(Class(rsdo:TunnelLiningCrossSectionConstructionRuleAttribute))
+Declaration(Class(rsdo:TunnelPortal))
+Declaration(Class(rsdo:TunnelPortalElement))
+Declaration(Class(rsdo:TunnelPositionalRelationshipAttribute))
+Declaration(Class(rsdo:Unweathered))
+Declaration(Class(rsdo:VeryWet))
+Declaration(Class(rsdo:VolcanicEruption))
+Declaration(Class(rsdo:VolcanicEruptionElement))
+Declaration(Class(rsdo:Volume))
+Declaration(Class(rsdo:WaterContent))
+Declaration(Class(rsdo:WaveSpeedRatioKv))
+Declaration(Class(rsdo:Weight))
+Declaration(Class(rsdo:Wet))
+Declaration(Class(rsdo:Width))
+Declaration(Class(rsdo:WingWallTunnelPortal))
+Declaration(ObjectProperty(qudt:unit))
+Declaration(ObjectProperty(bpo:hasAttribute))
+Declaration(ObjectProperty(rsdo:RailwaySemanticBelongsTo))
+Declaration(ObjectProperty(rsdo:hasProfessionSemantic))
+Declaration(ObjectProperty(rsdo:hasProjectSemantic))
+Declaration(ObjectProperty(rsdo:hasRailwaySemantic))
+Declaration(ObjectProperty(rsdo:hasSemantic))
+Declaration(ObjectProperty(rsdo:hasUnit))
+Declaration(ObjectProperty(rsdo:professionSemanticBelongsTo))
+Declaration(ObjectProperty(rsdo:projectSemanticBelongsTo))
+Declaration(ObjectProperty(rsdo:semanticBelongsTo))
+Declaration(DataProperty(rsdo:hasValue))
+Declaration(DataProperty(rsdo:hasXCoordinate))
+Declaration(DataProperty(rsdo:hasYCoordinate))
+Declaration(DataProperty(rsdo:hasZCoordinate))
+Declaration(DataProperty(rsdo:isInScenicAreaOrTown))
+Declaration(AnnotationProperty(dc:created))
+Declaration(AnnotationProperty(dc:creator))
+Declaration(AnnotationProperty(dc:description))
+Declaration(AnnotationProperty(dc:license))
+Declaration(AnnotationProperty(dc:modified))
+Declaration(AnnotationProperty(dc:title))
+Declaration(AnnotationProperty(vann:preferredNamespacePrefix))
+Declaration(AnnotationProperty(vann:preferredNamespaceUri))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <https://w3id.org/rsdo#RailwaySemanticBelongsTo> (<https://w3id.org/rsdo#RailwaySemanticBelongsTo>)
+
+SubObjectPropertyOf(rsdo:RailwaySemanticBelongsTo rsdo:semanticBelongsTo)
+InverseObjectProperties(rsdo:RailwaySemanticBelongsTo rsdo:hasRailwaySemantic)
+
+# Object Property: <https://w3id.org/rsdo#hasProfessionSemantic> (<https://w3id.org/rsdo#hasProfessionSemantic>)
+
+SubObjectPropertyOf(rsdo:hasProfessionSemantic rsdo:hasSemantic)
+InverseObjectProperties(rsdo:hasProfessionSemantic rsdo:professionSemanticBelongsTo)
+ObjectPropertyDomain(rsdo:hasProfessionSemantic rsdo:ProfessionSpace)
+
+# Object Property: <https://w3id.org/rsdo#hasProjectSemantic> (<https://w3id.org/rsdo#hasProjectSemantic>)
+
+SubObjectPropertyOf(rsdo:hasProjectSemantic rsdo:hasSemantic)
+InverseObjectProperties(rsdo:hasProjectSemantic rsdo:projectSemanticBelongsTo)
+ObjectPropertyDomain(rsdo:hasProjectSemantic rsdo:ProjectSpace)
+
+# Object Property: <https://w3id.org/rsdo#hasRailwaySemantic> (<https://w3id.org/rsdo#hasRailwaySemantic>)
+
+SubObjectPropertyOf(rsdo:hasRailwaySemantic rsdo:hasSemantic)
+
+# Object Property: <https://w3id.org/rsdo#hasSemantic> (<https://w3id.org/rsdo#hasSemantic>)
+
+InverseObjectProperties(rsdo:hasSemantic rsdo:semanticBelongsTo)
+ObjectPropertyDomain(rsdo:hasSemantic bot:Zone)
+
+# Object Property: <https://w3id.org/rsdo#hasUnit> (has unit of measure)
+
+AnnotationAssertion(rdfs:comment rsdo:hasUnit "Attaches a quantity attribute to its unit of measure; a sub-property of qudt:unit, ranging over QUDT unit individuals such as unit:MPA, unit:M, unit:MilliM or unit:DEG."@en)
+AnnotationAssertion(rdfs:comment rsdo:hasUnit "将量值型属性与其计量单位关联，是 qudt:unit 的子属性；单位个体来自 QUDT。"@zh)
+AnnotationAssertion(rdfs:label rsdo:hasUnit "has unit of measure"@en)
+SubObjectPropertyOf(rsdo:hasUnit qudt:unit)
+ObjectPropertyDomain(rsdo:hasUnit rsdo:Quantity)
+ObjectPropertyRange(rsdo:hasUnit qudt:Unit)
+
+# Object Property: <https://w3id.org/rsdo#professionSemanticBelongsTo> (<https://w3id.org/rsdo#professionSemanticBelongsTo>)
+
+SubObjectPropertyOf(rsdo:professionSemanticBelongsTo rsdo:semanticBelongsTo)
+
+# Object Property: <https://w3id.org/rsdo#projectSemanticBelongsTo> (<https://w3id.org/rsdo#projectSemanticBelongsTo>)
+
+SubObjectPropertyOf(rsdo:projectSemanticBelongsTo rsdo:semanticBelongsTo)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: <https://w3id.org/rsdo#hasValue> (<https://w3id.org/rsdo#hasValue>)
+
+DataPropertyDomain(rsdo:hasValue bpo:Attribute)
+
+# Data Property: <https://w3id.org/rsdo#isInScenicAreaOrTown> (<https://w3id.org/rsdo#isInScenicAreaOrTown>)
+
+SubDataPropertyOf(rsdo:isInScenicAreaOrTown owl:topDataProperty)
+DataPropertyRange(rsdo:isInScenicAreaOrTown xsd:boolean)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <https://w3id.org/bot#Building> (<https://w3id.org/bot#Building>)
+
+
+# Class: <https://w3id.org/bot#Site> (<https://w3id.org/bot#Site>)
+
+
+# Class: <https://w3id.org/bot#Space> (<https://w3id.org/bot#Space>)
+
+
+# Class: <https://w3id.org/bot#Storey> (<https://w3id.org/bot#Storey>)
+
+
+# Class: <https://w3id.org/rsdo#AA> (<https://w3id.org/rsdo#AA>)
+
+SubClassOf(rsdo:AA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#AB> (<https://w3id.org/rsdo#AB>)
+
+SubClassOf(rsdo:AB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#AbstractElement> (<https://w3id.org/rsdo#AbstractElement>)
+
+SubClassOf(rsdo:AbstractElement bpo:Element)
+DisjointClasses(rsdo:AbstractElement rsdo:SolidElement)
+
+# Class: <https://w3id.org/rsdo#Angle> (<https://w3id.org/rsdo#Angle>)
+
+SubClassOf(rsdo:Angle rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#Area> (<https://w3id.org/rsdo#Area>)
+
+SubClassOf(rsdo:Area rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#BA> (<https://w3id.org/rsdo#BA>)
+
+SubClassOf(rsdo:BA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#BB> (<https://w3id.org/rsdo#BB>)
+
+SubClassOf(rsdo:BB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#BallastedTrack> (<https://w3id.org/rsdo#BallastedTrack>)
+
+AnnotationAssertion(rdfs:comment rsdo:BallastedTrack "有无砟道床的是无砟轨道")
+SubClassOf(rsdo:BallastedTrack rsdo:Track)
+DisjointClasses(rsdo:BallastedTrack rsdo:BallastlessTrack)
+
+# Class: <https://w3id.org/rsdo#BallastlessTrack> (<https://w3id.org/rsdo#BallastlessTrack>)
+
+AnnotationAssertion(rdfs:comment rsdo:BallastlessTrack "有碎石道床的是有砟轨道")
+SubClassOf(rsdo:BallastlessTrack rsdo:Track)
+
+# Class: <https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight> (<https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight>)
+
+SubClassOf(rsdo:BeamBottomToBearingStoneTopHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#BeamBottomToPierTopHeight> (<https://w3id.org/rsdo#BeamBottomToPierTopHeight>)
+
+SubClassOf(rsdo:BeamBottomToPierTopHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#BeamJointWidth> (<https://w3id.org/rsdo#BeamJointWidth>)
+
+SubClassOf(rsdo:BeamJointWidth rsdo:Width)
+
+# Class: <https://w3id.org/rsdo#BearingQuantity> (<https://w3id.org/rsdo#BearingQuantity>)
+
+SubClassOf(rsdo:BearingQuantity rsdo:Quantity)
+
+# Class: <https://w3id.org/rsdo#BearingStoneCalculatedHeight> (<https://w3id.org/rsdo#BearingStoneCalculatedHeight>)
+
+SubClassOf(rsdo:BearingStoneCalculatedHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#BearingToJointCenterlineDistance> (<https://w3id.org/rsdo#BearingToJointCenterlineDistance>)
+
+SubClassOf(rsdo:BearingToJointCenterlineDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#Blocky> (<https://w3id.org/rsdo#Blocky>)
+
+SubClassOf(rsdo:Blocky rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#BlockyStructure> (<https://w3id.org/rsdo#BlockyStructure>)
+
+SubClassOf(rsdo:BlockyStructure rsdo:RockStructureTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection> (<https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection>)
+
+SubClassOf(rsdo:BottomAndTrackFoundationLeftIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection> (<https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection>)
+
+SubClassOf(rsdo:BottomAndTrackFoundationRightIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#Bridge> (<https://w3id.org/rsdo#Bridge>)
+
+SubClassOf(rsdo:Bridge rsdo:ProfessionDesign)
+
+# Class: <https://w3id.org/rsdo#BridgeCrossSectionElement> (<https://w3id.org/rsdo#BridgeCrossSectionElement>)
+
+SubClassOf(rsdo:BridgeCrossSectionElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#CA> (<https://w3id.org/rsdo#CA>)
+
+SubClassOf(rsdo:CA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#CB> (<https://w3id.org/rsdo#CB>)
+
+SubClassOf(rsdo:CB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack> (<https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack>)
+
+SubClassOf(rsdo:CRTSⅠDoubleBlockBallastlessTrack rsdo:BallastlessTrack)
+
+# Class: <https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack> (<https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack>)
+
+SubClassOf(rsdo:CRTSⅠSlabBallastlessTrack rsdo:BallastlessTrack)
+
+# Class: <https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack> (<https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack>)
+
+SubClassOf(rsdo:CRTSⅢSlabBallastlessTrack rsdo:BallastlessTrack)
+
+# Class: <https://w3id.org/rsdo#Capacity> (<https://w3id.org/rsdo#Capacity>)
+
+SubClassOf(rsdo:Capacity rsdo:FunctionalAttribute)
+
+# Class: <https://w3id.org/rsdo#ChemicalAttribute> (<https://w3id.org/rsdo#ChemicalAttribute>)
+
+SubClassOf(rsdo:ChemicalAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#Columnar> (<https://w3id.org/rsdo#Columnar>)
+
+SubClassOf(rsdo:Columnar rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#CombinedTunnelPortal> (<https://w3id.org/rsdo#CombinedTunnelPortal>)
+
+SubClassOf(rsdo:CombinedTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Complete> (<https://w3id.org/rsdo#Complete>)
+
+SubClassOf(rsdo:Complete rsdo:RockIntegrityDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#CompletelyWeathered> (<https://w3id.org/rsdo#CompletelyWeathered>)
+
+SubClassOf(rsdo:CompletelyWeathered rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#Composition> (<https://w3id.org/rsdo#Composition>)
+
+SubClassOf(rsdo:Composition rsdo:MaterialAttribute)
+
+# Class: <https://w3id.org/rsdo#ControlPointAttribute> (<https://w3id.org/rsdo#ControlPointAttribute>)
+
+SubClassOf(rsdo:ControlPointAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#ConventionalSpeedRailway> (<https://w3id.org/rsdo#ConventionalSpeedRailway>)
+
+SubClassOf(rsdo:ConventionalSpeedRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#CrownArchElement> (<https://w3id.org/rsdo#CrownArchElement>)
+
+SubClassOf(rsdo:CrownArchElement rsdo:TunnelBodyElement)
+
+# Class: <https://w3id.org/rsdo#CrownTopCenterAngle> (<https://w3id.org/rsdo#CrownTopCenterAngle>)
+
+SubClassOf(rsdo:CrownTopCenterAngle rsdo:Angle)
+
+# Class: <https://w3id.org/rsdo#CrownTopRadius> (<https://w3id.org/rsdo#CrownTopRadius>)
+
+SubClassOf(rsdo:CrownTopRadius rsdo:Radius)
+
+# Class: <https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance> (<https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance>)
+
+SubClassOf(rsdo:CrownTopToTrackSurfaceDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#CrownWaistCenterAngle> (<https://w3id.org/rsdo#CrownWaistCenterAngle>)
+
+SubClassOf(rsdo:CrownWaistCenterAngle rsdo:Angle)
+
+# Class: <https://w3id.org/rsdo#CrownWaistRadius> (<https://w3id.org/rsdo#CrownWaistRadius>)
+
+SubClassOf(rsdo:CrownWaistRadius rsdo:Radius)
+
+# Class: <https://w3id.org/rsdo#CurveRadius> (<https://w3id.org/rsdo#CurveRadius>)
+
+SubClassOf(rsdo:CurveRadius rsdo:Radius)
+
+# Class: <https://w3id.org/rsdo#CurveWallPointToBottomDistance> (<https://w3id.org/rsdo#CurveWallPointToBottomDistance>)
+
+SubClassOf(rsdo:CurveWallPointToBottomDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#CurvedTangentTunnelPortal> (<https://w3id.org/rsdo#CurvedTangentTunnelPortal>)
+
+SubClassOf(rsdo:CurvedTangentTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#CutAndCoverStructureElement> (<https://w3id.org/rsdo#CutAndCoverStructureElement>)
+
+SubClassOf(rsdo:CutAndCoverStructureElement rsdo:TunnelBodyElement)
+
+# Class: <https://w3id.org/rsdo#DA> (<https://w3id.org/rsdo#DA>)
+
+SubClassOf(rsdo:DA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#DB> (<https://w3id.org/rsdo#DB>)
+
+SubClassOf(rsdo:DB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#DebrisLike> (<https://w3id.org/rsdo#DebrisLike>)
+
+SubClassOf(rsdo:DebrisLike rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#Dense> (<https://w3id.org/rsdo#Dense>)
+
+SubClassOf(rsdo:Dense rsdo:SoilCompactionDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#Density> (<https://w3id.org/rsdo#Density>)
+
+SubClassOf(rsdo:Density rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#Depth> (<https://w3id.org/rsdo#Depth>)
+
+SubClassOf(rsdo:Depth rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#DesignTrackElevation> (<https://w3id.org/rsdo#DesignTrackElevation>)
+
+SubClassOf(rsdo:DesignTrackElevation rsdo:Elevation)
+
+# Class: <https://w3id.org/rsdo#Diesel> (<https://w3id.org/rsdo#Diesel>)
+
+SubClassOf(rsdo:Diesel rsdo:RailwayLineTractionTypeAttribute)
+DisjointClasses(rsdo:Diesel rsdo:Electric)
+
+# Class: <https://w3id.org/rsdo#Distance> (<https://w3id.org/rsdo#Distance>)
+
+SubClassOf(rsdo:Distance rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#Duststorm> (<https://w3id.org/rsdo#Duststorm>)
+
+SubClassOf(rsdo:Duststorm rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#DuststormElement> (<https://w3id.org/rsdo#DuststormElement>)
+
+SubClassOf(rsdo:DuststormElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#EA> (<https://w3id.org/rsdo#EA>)
+
+SubClassOf(rsdo:EA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#EB> (<https://w3id.org/rsdo#EB>)
+
+SubClassOf(rsdo:EB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#Earthquake> (<https://w3id.org/rsdo#Earthquake>)
+
+SubClassOf(rsdo:Earthquake rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#EarthquakeElement> (<https://w3id.org/rsdo#EarthquakeElement>)
+
+SubClassOf(rsdo:EarthquakeElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#EavesCutTunnelPortal> (<https://w3id.org/rsdo#EavesCutTunnelPortal>)
+
+SubClassOf(rsdo:EavesCutTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Efficiency> (<https://w3id.org/rsdo#Efficiency>)
+
+SubClassOf(rsdo:Efficiency rsdo:FunctionalAttribute)
+
+# Class: <https://w3id.org/rsdo#Elasticity> (<https://w3id.org/rsdo#Elasticity>)
+
+SubClassOf(rsdo:Elasticity rsdo:MaterialAttribute)
+
+# Class: <https://w3id.org/rsdo#Electric> (<https://w3id.org/rsdo#Electric>)
+
+SubClassOf(rsdo:Electric rsdo:RailwayLineTractionTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#Elevation> (<https://w3id.org/rsdo#Elevation>)
+
+SubClassOf(rsdo:Elevation rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#EndWallTunnelPortal> (<https://w3id.org/rsdo#EndWallTunnelPortal>)
+
+SubClassOf(rsdo:EndWallTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#ExtraThickLayer> (<https://w3id.org/rsdo#ExtraThickLayer>)
+
+SubClassOf(rsdo:ExtraThickLayer rsdo:RockLayerThicknessAttribute)
+
+# Class: <https://w3id.org/rsdo#ExtremelyFragmented> (<https://w3id.org/rsdo#ExtremelyFragmented>)
+
+SubClassOf(rsdo:ExtremelyFragmented rsdo:RockIntegrityDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#ExtremelyPoor> (<https://w3id.org/rsdo#ExtremelyPoor>)
+
+SubClassOf(rsdo:ExtremelyPoor rsdo:RockQualityAttribute)
+
+# Class: <https://w3id.org/rsdo#ExtremelySoftRock> (<https://w3id.org/rsdo#ExtremelySoftRock>)
+
+SubClassOf(rsdo:ExtremelySoftRock rsdo:RockHardnessDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#FA> (<https://w3id.org/rsdo#FA>)
+
+SubClassOf(rsdo:FA rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#FB> (<https://w3id.org/rsdo#FB>)
+
+SubClassOf(rsdo:FB rsdo:LiningCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#FlowRate> (<https://w3id.org/rsdo#FlowRate>)
+
+SubClassOf(rsdo:FlowRate rsdo:FunctionalAttribute)
+
+# Class: <https://w3id.org/rsdo#FlowablePlastic> (<https://w3id.org/rsdo#FlowablePlastic>)
+
+SubClassOf(rsdo:FlowablePlastic rsdo:SoilStateAttribute)
+
+# Class: <https://w3id.org/rsdo#FracturedStructure> (<https://w3id.org/rsdo#FracturedStructure>)
+
+SubClassOf(rsdo:FracturedStructure rsdo:RockStructureTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#Fragmented> (<https://w3id.org/rsdo#Fragmented>)
+
+SubClassOf(rsdo:Fragmented rsdo:RockIntegrityDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#FragmentedBlocky> (<https://w3id.org/rsdo#FragmentedBlocky>)
+
+SubClassOf(rsdo:FragmentedBlocky rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#FreightRailway> (<https://w3id.org/rsdo#FreightRailway>)
+
+SubClassOf(rsdo:FreightRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#FreightTransport> (<https://w3id.org/rsdo#FreightTransport>)
+
+SubClassOf(rsdo:FreightTransport rsdo:RailwayLineUsageAndFunctionAttribute)
+
+# Class: <https://w3id.org/rsdo#FrostHeaving> (<https://w3id.org/rsdo#FrostHeaving>)
+
+SubClassOf(rsdo:FrostHeaving rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#FrostHeavingElement> (<https://w3id.org/rsdo#FrostHeavingElement>)
+
+SubClassOf(rsdo:FrostHeavingElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#FunctionalAttribute> (<https://w3id.org/rsdo#FunctionalAttribute>)
+
+SubClassOf(rsdo:FunctionalAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#GeologicalAttribute> (<https://w3id.org/rsdo#GeologicalAttribute>)
+
+SubClassOf(rsdo:GeologicalAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#GeologicalDisasterElement> (<https://w3id.org/rsdo#GeologicalDisasterElement>)
+
+SubClassOf(rsdo:GeologicalDisasterElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#Geology> (<https://w3id.org/rsdo#Geology>)
+
+SubClassOf(rsdo:Geology rsdo:ProfessionSurvey)
+
+# Class: <https://w3id.org/rsdo#GeologyElement> (<https://w3id.org/rsdo#GeologyElement>)
+
+SubClassOf(rsdo:GeologyElement rsdo:SolidElement)
+
+# Class: <https://w3id.org/rsdo#GeometricAttribute> (<https://w3id.org/rsdo#GeometricAttribute>)
+
+SubClassOf(rsdo:GeometricAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#GiantBlocky> (<https://w3id.org/rsdo#GiantBlocky>)
+
+SubClassOf(rsdo:GiantBlocky rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#Good> (<https://w3id.org/rsdo#Good>)
+
+SubClassOf(rsdo:Good rsdo:RockQualityAttribute)
+
+# Class: <https://w3id.org/rsdo#GradeⅠRock> (<https://w3id.org/rsdo#GradeⅠRock>)
+
+EquivalentClasses(rsdo:GradeⅠRock ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Complete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:HardRock)))
+SubClassOf(rsdo:GradeⅠRock rsdo:RockElement)
+
+# Class: <https://w3id.org/rsdo#GradeⅡRock> (<https://w3id.org/rsdo#GradeⅡRock>)
+
+EquivalentClasses(rsdo:GradeⅡRock ObjectUnionOf(ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Complete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyHardRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:HardRock) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyComplete))))
+SubClassOf(rsdo:GradeⅡRock rsdo:RockElement)
+
+# Class: <https://w3id.org/rsdo#GradeⅢRock> (<https://w3id.org/rsdo#GradeⅢRock>)
+
+EquivalentClasses(rsdo:GradeⅢRock ObjectUnionOf(ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Complete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelySoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:HardRock) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyFragmented)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyComplete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyHardRock))))
+SubClassOf(rsdo:GradeⅢRock rsdo:RockElement)
+
+# Class: <https://w3id.org/rsdo#GradeⅣRock> (<https://w3id.org/rsdo#GradeⅣRock>)
+
+EquivalentClasses(rsdo:GradeⅣRock ObjectUnionOf(ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Complete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:SoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Fragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyHardRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyComplete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelySoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyComplete) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:SoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyFragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyHardRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyFragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelySoftRock))))
+SubClassOf(rsdo:GradeⅣRock rsdo:RockElement)
+
+# Class: <https://w3id.org/rsdo#GradeⅤRock> (<https://w3id.org/rsdo#GradeⅤRock>)
+
+EquivalentClasses(rsdo:GradeⅤRock ObjectUnionOf(ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:ExtremelyFragmented)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:ExtremelySoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Fragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelySoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:Fragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:SoftRock)) ObjectIntersectionOf(rsdo:RockElement ObjectSomeValuesFrom(bpo:hasAttribute rsdo:RelativelyFragmented) ObjectSomeValuesFrom(bpo:hasAttribute rsdo:SoftRock))))
+SubClassOf(rsdo:GradeⅤRock rsdo:RockElement)
+
+# Class: <https://w3id.org/rsdo#GranularStructure> (<https://w3id.org/rsdo#GranularStructure>)
+
+SubClassOf(rsdo:GranularStructure rsdo:RockStructureTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#Hard> (<https://w3id.org/rsdo#Hard>)
+
+SubClassOf(rsdo:Hard rsdo:SoilStateAttribute)
+
+# Class: <https://w3id.org/rsdo#HardPlastic> (<https://w3id.org/rsdo#HardPlastic>)
+
+SubClassOf(rsdo:HardPlastic rsdo:SoilStateAttribute)
+
+# Class: <https://w3id.org/rsdo#HardRock> (<https://w3id.org/rsdo#HardRock>)
+
+SubClassOf(rsdo:HardRock rsdo:RockHardnessDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#Hardness> (<https://w3id.org/rsdo#Hardness>)
+
+SubClassOf(rsdo:Hardness rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#Height> (<https://w3id.org/rsdo#Height>)
+
+SubClassOf(rsdo:Height rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#HighSpeedRailway> (<https://w3id.org/rsdo#HighSpeedRailway>)
+
+SubClassOf(rsdo:HighSpeedRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#Hydrology> (<https://w3id.org/rsdo#Hydrology>)
+
+SubClassOf(rsdo:Hydrology rsdo:ProfessionSurvey)
+
+# Class: <https://w3id.org/rsdo#IndexAttribute> (<https://w3id.org/rsdo#IndexAttribute>)
+
+SubClassOf(rsdo:IndexAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#InitialTotalHeightOfBridgePier> (<https://w3id.org/rsdo#InitialTotalHeightOfBridgePier>)
+
+SubClassOf(rsdo:InitialTotalHeightOfBridgePier rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeLeftIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeLeftLowerIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeLeftUpperIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeRightIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeRightLowerIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection> (<https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection>)
+
+SubClassOf(rsdo:InnerContourAndBaseFlangeRightUpperIntersection rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourCenterQuantity> (<https://w3id.org/rsdo#InnerContourCenterQuantity>)
+
+SubClassOf(rsdo:InnerContourCenterQuantity rsdo:Quantity)
+
+# Class: <https://w3id.org/rsdo#InnerContourCrownPoint> (<https://w3id.org/rsdo#InnerContourCrownPoint>)
+
+SubClassOf(rsdo:InnerContourCrownPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourHeight> (<https://w3id.org/rsdo#InnerContourHeight>)
+
+SubClassOf(rsdo:InnerContourHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#InnerContourLeftArchFootPoint> (<https://w3id.org/rsdo#InnerContourLeftArchFootPoint>)
+
+SubClassOf(rsdo:InnerContourLeftArchFootPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourLeftArchWaistPoint> (<https://w3id.org/rsdo#InnerContourLeftArchWaistPoint>)
+
+SubClassOf(rsdo:InnerContourLeftArchWaistPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourMaxSpanPoint> (<https://w3id.org/rsdo#InnerContourMaxSpanPoint>)
+
+SubClassOf(rsdo:InnerContourMaxSpanPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourMinSpanPoint> (<https://w3id.org/rsdo#InnerContourMinSpanPoint>)
+
+SubClassOf(rsdo:InnerContourMinSpanPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourOffsetThickness> (<https://w3id.org/rsdo#InnerContourOffsetThickness>)
+
+SubClassOf(rsdo:InnerContourOffsetThickness rsdo:Thickness)
+DisjointClasses(rsdo:InnerContourOffsetThickness rsdo:SingleLayerThickness)
+
+# Class: <https://w3id.org/rsdo#InnerContourRightArchFootPoint> (<https://w3id.org/rsdo#InnerContourRightArchFootPoint>)
+
+SubClassOf(rsdo:InnerContourRightArchFootPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#InnerContourRightArchWaistPoint> (<https://w3id.org/rsdo#InnerContourRightArchWaistPoint>)
+
+SubClassOf(rsdo:InnerContourRightArchWaistPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#IntegrityIndex> (<https://w3id.org/rsdo#IntegrityIndex>)
+
+SubClassOf(rsdo:IntegrityIndex rsdo:IndexAttribute)
+DisjointClasses(rsdo:IntegrityIndex rsdo:LiquidityIndex)
+
+# Class: <https://w3id.org/rsdo#IntenseWeathering> (<https://w3id.org/rsdo#IntenseWeathering>)
+
+SubClassOf(rsdo:IntenseWeathering rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#Intensity6Earthquake> (<https://w3id.org/rsdo#Intensity6Earthquake>)
+
+SubClassOf(rsdo:Intensity6Earthquake rsdo:Earthquake)
+
+# Class: <https://w3id.org/rsdo#Intensity7Earthquake> (<https://w3id.org/rsdo#Intensity7Earthquake>)
+
+SubClassOf(rsdo:Intensity7Earthquake rsdo:Earthquake)
+
+# Class: <https://w3id.org/rsdo#Intensity8Earthquake> (<https://w3id.org/rsdo#Intensity8Earthquake>)
+
+SubClassOf(rsdo:Intensity8Earthquake rsdo:Earthquake)
+
+# Class: <https://w3id.org/rsdo#Intensity9Earthquake> (<https://w3id.org/rsdo#Intensity9Earthquake>)
+
+SubClassOf(rsdo:Intensity9Earthquake rsdo:Earthquake)
+
+# Class: <https://w3id.org/rsdo#IntercityRailway> (<https://w3id.org/rsdo#IntercityRailway>)
+
+SubClassOf(rsdo:IntercityRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#KarstDisasters> (<https://w3id.org/rsdo#KarstDisasters>)
+
+SubClassOf(rsdo:KarstDisasters rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#KarstDisastersElement> (<https://w3id.org/rsdo#KarstDisastersElement>)
+
+SubClassOf(rsdo:KarstDisastersElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#Landslide> (<https://w3id.org/rsdo#Landslide>)
+
+SubClassOf(rsdo:Landslide rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#LandslideElement> (<https://w3id.org/rsdo#LandslideElement>)
+
+SubClassOf(rsdo:LandslideElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#LargeMileBearingStoneHeight> (<https://w3id.org/rsdo#LargeMileBearingStoneHeight>)
+
+SubClassOf(rsdo:LargeMileBearingStoneHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#LateralPressureTunnelPortal> (<https://w3id.org/rsdo#LateralPressureTunnelPortal>)
+
+SubClassOf(rsdo:LateralPressureTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Layered> (<https://w3id.org/rsdo#Layered>)
+
+SubClassOf(rsdo:Layered rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#LayeredStructure> (<https://w3id.org/rsdo#LayeredStructure>)
+
+SubClassOf(rsdo:LayeredStructure rsdo:RockStructureTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement> (<https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement>)
+
+SubClassOf(rsdo:LeftAuxiliaryRetainingWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#LeftPierColumnElement> (<https://w3id.org/rsdo#LeftPierColumnElement>)
+
+SubClassOf(rsdo:LeftPierColumnElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#LeftSideWallElement> (<https://w3id.org/rsdo#LeftSideWallElement>)
+
+SubClassOf(rsdo:LeftSideWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#LeftWingWallElement> (<https://w3id.org/rsdo#LeftWingWallElement>)
+
+SubClassOf(rsdo:LeftWingWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#Length> (<https://w3id.org/rsdo#Length>)
+
+SubClassOf(rsdo:Length rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningCrossSectionElement> (<https://w3id.org/rsdo#LiningCrossSectionElement>)
+
+AnnotationAssertion(rdfs:comment rsdo:LiningCrossSectionElement "是否还能分的更细")
+SubClassOf(rsdo:LiningCrossSectionElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint> (<https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint>)
+
+SubClassOf(rsdo:LiningInvertedArchMaxBuriedDepthPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint> (<https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint>)
+
+SubClassOf(rsdo:LiningInvertedArchSegmentLeftPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint> (<https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint>)
+
+SubClassOf(rsdo:LiningInvertedArchSegmentRightPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningLeftArchWaistPoint> (<https://w3id.org/rsdo#LiningLeftArchWaistPoint>)
+
+SubClassOf(rsdo:LiningLeftArchWaistPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint> (<https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint>)
+
+SubClassOf(rsdo:LiningLeftCurvedSideWallPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint> (<https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint>)
+
+SubClassOf(rsdo:LiningLeftTransformationArcSegmentPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint> (<https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint>)
+
+SubClassOf(rsdo:LiningLeftTransitionArcSegmentPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningRightArchWaistPoint> (<https://w3id.org/rsdo#LiningRightArchWaistPoint>)
+
+SubClassOf(rsdo:LiningRightArchWaistPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningRightCurvedSideWallPoint> (<https://w3id.org/rsdo#LiningRightCurvedSideWallPoint>)
+
+SubClassOf(rsdo:LiningRightCurvedSideWallPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint> (<https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint>)
+
+SubClassOf(rsdo:LiningRightTransformationArcSegmentPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint> (<https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint>)
+
+SubClassOf(rsdo:LiningRightTransitionArcSegmentPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiningTopCrownRingPoint> (<https://w3id.org/rsdo#LiningTopCrownRingPoint>)
+
+SubClassOf(rsdo:LiningTopCrownRingPoint rsdo:ControlPointAttribute)
+
+# Class: <https://w3id.org/rsdo#LiquidityIndex> (<https://w3id.org/rsdo#LiquidityIndex>)
+
+SubClassOf(rsdo:LiquidityIndex rsdo:IndexAttribute)
+
+# Class: <https://w3id.org/rsdo#LongitudinalBearingCenterDistance> (<https://w3id.org/rsdo#LongitudinalBearingCenterDistance>)
+
+SubClassOf(rsdo:LongitudinalBearingCenterDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance> (<https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance>)
+
+SubClassOf(rsdo:LongitudinalBearingToBeamEndDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#LongitudinalSlabLength> (<https://w3id.org/rsdo#LongitudinalSlabLength>)
+
+SubClassOf(rsdo:LongitudinalSlabLength rsdo:Length)
+
+# Class: <https://w3id.org/rsdo#LongitudinalSlope> (<https://w3id.org/rsdo#LongitudinalSlope>)
+
+SubClassOf(rsdo:LongitudinalSlope rsdo:Ratio)
+
+# Class: <https://w3id.org/rsdo#MainEndWallElement> (<https://w3id.org/rsdo#MainEndWallElement>)
+
+SubClassOf(rsdo:MainEndWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#Mass> (<https://w3id.org/rsdo#Mass>)
+
+SubClassOf(rsdo:Mass rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#MaterialAttribute> (<https://w3id.org/rsdo#MaterialAttribute>)
+
+SubClassOf(rsdo:MaterialAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#MaterialType> (<https://w3id.org/rsdo#MaterialType>)
+
+SubClassOf(rsdo:MaterialType rsdo:MaterialAttribute)
+
+# Class: <https://w3id.org/rsdo#MedianWallElement> (<https://w3id.org/rsdo#MedianWallElement>)
+
+SubClassOf(rsdo:MedianWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#MediumDensity> (<https://w3id.org/rsdo#MediumDensity>)
+
+SubClassOf(rsdo:MediumDensity rsdo:SoilCompactionDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#MediumThickLayer> (<https://w3id.org/rsdo#MediumThickLayer>)
+
+SubClassOf(rsdo:MediumThickLayer rsdo:RockLayerThicknessAttribute)
+
+# Class: <https://w3id.org/rsdo#MilepostNumber> (<https://w3id.org/rsdo#MilepostNumber>)
+
+SubClassOf(rsdo:MilepostNumber rsdo:RailwayLineAttribute)
+
+# Class: <https://w3id.org/rsdo#ModerateWeathering> (<https://w3id.org/rsdo#ModerateWeathering>)
+
+SubClassOf(rsdo:ModerateWeathering rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#Mudflow> (<https://w3id.org/rsdo#Mudflow>)
+
+SubClassOf(rsdo:Mudflow rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#MudflowElement> (<https://w3id.org/rsdo#MudflowElement>)
+
+SubClassOf(rsdo:MudflowElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#ObliqueIntersectionAngle> (<https://w3id.org/rsdo#ObliqueIntersectionAngle>)
+
+SubClassOf(rsdo:ObliqueIntersectionAngle rsdo:Angle)
+
+# Class: <https://w3id.org/rsdo#ObliqueToTunnelAxis> (<https://w3id.org/rsdo#ObliqueToTunnelAxis>)
+
+SubClassOf(rsdo:ObliqueToTunnelAxis rsdo:TunnelPositionalRelationshipAttribute)
+DisjointClasses(rsdo:ObliqueToTunnelAxis rsdo:OrthogonalToTunnelAxis)
+
+# Class: <https://w3id.org/rsdo#OrthogonalToTunnelAxis> (<https://w3id.org/rsdo#OrthogonalToTunnelAxis>)
+
+SubClassOf(rsdo:OrthogonalToTunnelAxis rsdo:TunnelPositionalRelationshipAttribute)
+
+# Class: <https://w3id.org/rsdo#PassengerAndFreightCoexistence> (<https://w3id.org/rsdo#PassengerAndFreightCoexistence>)
+
+SubClassOf(rsdo:PassengerAndFreightCoexistence rsdo:RailwayLineUsageAndFunctionAttribute)
+
+# Class: <https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway> (<https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway>)
+
+SubClassOf(rsdo:PassengerAndFreightCoexistingRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#PassengerDedicatedLineRailway> (<https://w3id.org/rsdo#PassengerDedicatedLineRailway>)
+
+SubClassOf(rsdo:PassengerDedicatedLineRailway rsdo:Railway)
+
+# Class: <https://w3id.org/rsdo#PassengerTransport> (<https://w3id.org/rsdo#PassengerTransport>)
+
+SubClassOf(rsdo:PassengerTransport rsdo:RailwayLineUsageAndFunctionAttribute)
+
+# Class: <https://w3id.org/rsdo#PeakAcceleration> (<https://w3id.org/rsdo#PeakAcceleration>)
+
+SubClassOf(rsdo:PeakAcceleration rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#PhysicalAttribute> (<https://w3id.org/rsdo#PhysicalAttribute>)
+
+SubClassOf(rsdo:PhysicalAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#PierHeight> (<https://w3id.org/rsdo#PierHeight>)
+
+SubClassOf(rsdo:PierHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#PillarTypeTunnelPortal> (<https://w3id.org/rsdo#PillarTypeTunnelPortal>)
+
+SubClassOf(rsdo:PillarTypeTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Plastic> (<https://w3id.org/rsdo#Plastic>)
+
+SubClassOf(rsdo:Plastic rsdo:SoilStateAttribute)
+
+# Class: <https://w3id.org/rsdo#PlasticityIndex> (<https://w3id.org/rsdo#PlasticityIndex>)
+
+SubClassOf(rsdo:PlasticityIndex rsdo:IndexAttribute)
+
+# Class: <https://w3id.org/rsdo#Platy> (<https://w3id.org/rsdo#Platy>)
+
+SubClassOf(rsdo:Platy rsdo:RockStructuralShapeAttribute)
+
+# Class: <https://w3id.org/rsdo#Poor> (<https://w3id.org/rsdo#Poor>)
+
+SubClassOf(rsdo:Poor rsdo:RockQualityAttribute)
+
+# Class: <https://w3id.org/rsdo#Porosity> (<https://w3id.org/rsdo#Porosity>)
+
+SubClassOf(rsdo:Porosity rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#ProfessionAttribute> (<https://w3id.org/rsdo#ProfessionAttribute>)
+
+SubClassOf(rsdo:ProfessionAttribute bpo:Attribute)
+DisjointClasses(rsdo:ProfessionAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#ProfessionDesign> (<https://w3id.org/rsdo#ProfessionDesign>)
+
+AnnotationAssertion(rdfs:comment rsdo:ProfessionDesign "选型采用定义类，非选型采用的普通类")
+
+# Class: <https://w3id.org/rsdo#ProfessionRangedAttribute> (<https://w3id.org/rsdo#ProfessionRangedAttribute>)
+
+SubClassOf(rsdo:ProfessionRangedAttribute bpo:RangedAttribute)
+DisjointClasses(rsdo:ProfessionRangedAttribute rsdo:SharedRangedAttribute)
+
+# Class: <https://w3id.org/rsdo#ProfessionSpace> (<https://w3id.org/rsdo#ProfessionSpace>)
+
+SubClassOf(rsdo:ProfessionSpace bot:Zone)
+
+# Class: <https://w3id.org/rsdo#ProfessionSurvey> (<https://w3id.org/rsdo#ProfessionSurvey>)
+
+AnnotationAssertion(rdfs:comment rsdo:ProfessionSurvey "选型采用定义类，非选型采用的普通类")
+
+# Class: <https://w3id.org/rsdo#ProjectDesign> (<https://w3id.org/rsdo#ProjectDesign>)
+
+
+# Class: <https://w3id.org/rsdo#ProjectSpace> (<https://w3id.org/rsdo#ProjectSpace>)
+
+SubClassOf(rsdo:ProjectSpace bot:Zone)
+
+# Class: <https://w3id.org/rsdo#ProjectSurvey> (<https://w3id.org/rsdo#ProjectSurvey>)
+
+
+# Class: <https://w3id.org/rsdo#Quantity> (<https://w3id.org/rsdo#Quantity>)
+
+AnnotationAssertion(rdfs:comment rsdo:Quantity "Unit module: a quantity attribute is a QUDT quantity, so its unit is assigned with qudt:unit (through rsdo:hasUnit) and its value with the attribute-value properties."@en)
+AnnotationAssertion(rdfs:comment rsdo:Quantity "单位模块：量值型物理属性属于 QUDT 量，其单位用 qudt:unit（经 rsdo:hasUnit）关联到 QUDT 单位个体。"@zh)
+SubClassOf(rsdo:Quantity qudt:Quantity)
+SubClassOf(rsdo:Quantity rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#RQD> (<https://w3id.org/rsdo#RQD>)
+
+SubClassOf(rsdo:RQD rsdo:IndexAttribute)
+
+# Class: <https://w3id.org/rsdo#Radius> (<https://w3id.org/rsdo#Radius>)
+
+SubClassOf(rsdo:Radius rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#Railway> (<https://w3id.org/rsdo#Railway>)
+
+
+# Class: <https://w3id.org/rsdo#RailwayLine> (<https://w3id.org/rsdo#RailwayLine>)
+
+SubClassOf(rsdo:RailwayLine rsdo:ProfessionDesign)
+
+# Class: <https://w3id.org/rsdo#RailwayLine20082301> (<https://w3id.org/rsdo#RailwayLine20082301>)
+
+SubClassOf(rsdo:RailwayLine20082301 rsdo:RailwayLineCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#RailwayLine20112351-Ⅲ> (<https://w3id.org/rsdo#RailwayLine20112351-Ⅲ>)
+
+SubClassOf(rsdo:RailwayLine20112351-Ⅲ rsdo:RailwayLineCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#RailwayLine20182332> (<https://w3id.org/rsdo#RailwayLine20182332>)
+
+SubClassOf(rsdo:RailwayLine20182332 rsdo:RailwayLineCrossSectionElement)
+
+# Class: <https://w3id.org/rsdo#RailwayLineAttribute> (<https://w3id.org/rsdo#RailwayLineAttribute>)
+
+SubClassOf(rsdo:RailwayLineAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#RailwayLineCrossSectionElement> (<https://w3id.org/rsdo#RailwayLineCrossSectionElement>)
+
+SubClassOf(rsdo:RailwayLineCrossSectionElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#RailwayLineDistance> (<https://w3id.org/rsdo#RailwayLineDistance>)
+
+SubClassOf(rsdo:RailwayLineDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#RailwayLineElement> (<https://w3id.org/rsdo#RailwayLineElement>)
+
+SubClassOf(rsdo:RailwayLineElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#RailwayLineQuantity> (<https://w3id.org/rsdo#RailwayLineQuantity>)
+
+SubClassOf(rsdo:RailwayLineQuantity rsdo:Quantity)
+
+# Class: <https://w3id.org/rsdo#RailwayLineTractionTypeAttribute> (<https://w3id.org/rsdo#RailwayLineTractionTypeAttribute>)
+
+SubClassOf(rsdo:RailwayLineTractionTypeAttribute rsdo:RailwayLineAttribute)
+
+# Class: <https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute> (<https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute>)
+
+SubClassOf(rsdo:RailwayLineUsageAndFunctionAttribute rsdo:RailwayLineAttribute)
+
+# Class: <https://w3id.org/rsdo#RailwaySpace> (<https://w3id.org/rsdo#RailwaySpace>)
+
+SubClassOf(rsdo:RailwaySpace bot:Zone)
+
+# Class: <https://w3id.org/rsdo#Ratio> (<https://w3id.org/rsdo#Ratio>)
+
+SubClassOf(rsdo:Ratio rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelyComplete> (<https://w3id.org/rsdo#RelativelyComplete>)
+
+SubClassOf(rsdo:RelativelyComplete rsdo:RockIntegrityDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelyFragmented> (<https://w3id.org/rsdo#RelativelyFragmented>)
+
+SubClassOf(rsdo:RelativelyFragmented rsdo:RockIntegrityDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelyGood> (<https://w3id.org/rsdo#RelativelyGood>)
+
+SubClassOf(rsdo:RelativelyGood rsdo:RockQualityAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelyHardRock> (<https://w3id.org/rsdo#RelativelyHardRock>)
+
+SubClassOf(rsdo:RelativelyHardRock rsdo:RockHardnessDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelyPoor> (<https://w3id.org/rsdo#RelativelyPoor>)
+
+SubClassOf(rsdo:RelativelyPoor rsdo:RockQualityAttribute)
+
+# Class: <https://w3id.org/rsdo#RelativelySoftRock> (<https://w3id.org/rsdo#RelativelySoftRock>)
+
+SubClassOf(rsdo:RelativelySoftRock rsdo:RockHardnessDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#ResidualSoil> (<https://w3id.org/rsdo#ResidualSoil>)
+
+SubClassOf(rsdo:ResidualSoil rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#ReverseCutTunnelPortal> (<https://w3id.org/rsdo#ReverseCutTunnelPortal>)
+
+SubClassOf(rsdo:ReverseCutTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement> (<https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement>)
+
+SubClassOf(rsdo:RightAuxiliaryRetainingWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#RightPierColumnElement> (<https://w3id.org/rsdo#RightPierColumnElement>)
+
+SubClassOf(rsdo:RightPierColumnElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#RightSideWallElement> (<https://w3id.org/rsdo#RightSideWallElement>)
+
+SubClassOf(rsdo:RightSideWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#RightWingWallElement> (<https://w3id.org/rsdo#RightWingWallElement>)
+
+SubClassOf(rsdo:RightWingWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#RockAttribute> (<https://w3id.org/rsdo#RockAttribute>)
+
+AnnotationAssertion(rdfs:comment rsdo:RockAttribute "自带")
+SubClassOf(rsdo:RockAttribute rsdo:GeologicalAttribute)
+
+# Class: <https://w3id.org/rsdo#RockElement> (<https://w3id.org/rsdo#RockElement>)
+
+SubClassOf(rsdo:RockElement rsdo:GeologyElement)
+DisjointClasses(rsdo:RockElement rsdo:SoilElement)
+
+# Class: <https://w3id.org/rsdo#RockHardnessDegreeAttribute> (<https://w3id.org/rsdo#RockHardnessDegreeAttribute>)
+
+SubClassOf(rsdo:RockHardnessDegreeAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockIntegrityDegreeAttribute> (<https://w3id.org/rsdo#RockIntegrityDegreeAttribute>)
+
+SubClassOf(rsdo:RockIntegrityDegreeAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockLayerThicknessAttribute> (<https://w3id.org/rsdo#RockLayerThicknessAttribute>)
+
+SubClassOf(rsdo:RockLayerThicknessAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockQualityAttribute> (<https://w3id.org/rsdo#RockQualityAttribute>)
+
+SubClassOf(rsdo:RockQualityAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockStructuralShapeAttribute> (<https://w3id.org/rsdo#RockStructuralShapeAttribute>)
+
+SubClassOf(rsdo:RockStructuralShapeAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockStructureTypeAttribute> (<https://w3id.org/rsdo#RockStructureTypeAttribute>)
+
+SubClassOf(rsdo:RockStructureTypeAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#RockWeatheringDegreeAttribute> (<https://w3id.org/rsdo#RockWeatheringDegreeAttribute>)
+
+SubClassOf(rsdo:RockWeatheringDegreeAttribute rsdo:RockAttribute)
+
+# Class: <https://w3id.org/rsdo#Rockfall> (<https://w3id.org/rsdo#Rockfall>)
+
+SubClassOf(rsdo:Rockfall rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#RockfallElement> (<https://w3id.org/rsdo#RockfallElement>)
+
+SubClassOf(rsdo:RockfallElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength> (<https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength>)
+
+SubClassOf(rsdo:SaturatedUniaxialCompressiveStrength rsdo:Strength)
+
+# Class: <https://w3id.org/rsdo#ShapeAttribute> (<https://w3id.org/rsdo#ShapeAttribute>)
+
+SubClassOf(rsdo:ShapeAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#SharedAttribute> (<https://w3id.org/rsdo#SharedAttribute>)
+
+SubClassOf(rsdo:SharedAttribute bpo:Attribute)
+
+# Class: <https://w3id.org/rsdo#SimplySupportedBoxGirderLength> (<https://w3id.org/rsdo#SimplySupportedBoxGirderLength>)
+
+SubClassOf(rsdo:SimplySupportedBoxGirderLength rsdo:Length)
+
+# Class: <https://w3id.org/rsdo#SingleLayerThickness> (<https://w3id.org/rsdo#SingleLayerThickness>)
+
+SubClassOf(rsdo:SingleLayerThickness rsdo:Thickness)
+
+# Class: <https://w3id.org/rsdo#SinglePressureTunnelPortal> (<https://w3id.org/rsdo#SinglePressureTunnelPortal>)
+
+SubClassOf(rsdo:SinglePressureTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Size> (<https://w3id.org/rsdo#Size>)
+
+SubClassOf(rsdo:Size rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#SlightWeathering> (<https://w3id.org/rsdo#SlightWeathering>)
+
+SubClassOf(rsdo:SlightWeathering rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#SlightlyDense> (<https://w3id.org/rsdo#SlightlyDense>)
+
+SubClassOf(rsdo:SlightlyDense rsdo:SoilCompactionDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#SlightlyWet> (<https://w3id.org/rsdo#SlightlyWet>)
+
+SubClassOf(rsdo:SlightlyWet rsdo:SoilMoistureContentAttribute)
+
+# Class: <https://w3id.org/rsdo#SlopeRatio> (<https://w3id.org/rsdo#SlopeRatio>)
+
+SubClassOf(rsdo:SlopeRatio rsdo:Ratio)
+DisjointClasses(rsdo:SlopeRatio rsdo:WaterContent)
+
+# Class: <https://w3id.org/rsdo#SmallMileBearingStoneHeight> (<https://w3id.org/rsdo#SmallMileBearingStoneHeight>)
+
+SubClassOf(rsdo:SmallMileBearingStoneHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#SoftPlastic> (<https://w3id.org/rsdo#SoftPlastic>)
+
+SubClassOf(rsdo:SoftPlastic rsdo:SoilStateAttribute)
+
+# Class: <https://w3id.org/rsdo#SoftRock> (<https://w3id.org/rsdo#SoftRock>)
+
+SubClassOf(rsdo:SoftRock rsdo:RockHardnessDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#SoilAttribute> (<https://w3id.org/rsdo#SoilAttribute>)
+
+SubClassOf(rsdo:SoilAttribute rsdo:GeologicalAttribute)
+
+# Class: <https://w3id.org/rsdo#SoilCompactionDegreeAttribute> (<https://w3id.org/rsdo#SoilCompactionDegreeAttribute>)
+
+SubClassOf(rsdo:SoilCompactionDegreeAttribute rsdo:SoilAttribute)
+
+# Class: <https://w3id.org/rsdo#SoilElement> (<https://w3id.org/rsdo#SoilElement>)
+
+SubClassOf(rsdo:SoilElement rsdo:GeologyElement)
+
+# Class: <https://w3id.org/rsdo#SoilMoistureContentAttribute> (<https://w3id.org/rsdo#SoilMoistureContentAttribute>)
+
+SubClassOf(rsdo:SoilMoistureContentAttribute rsdo:SoilAttribute)
+
+# Class: <https://w3id.org/rsdo#SoilStateAttribute> (<https://w3id.org/rsdo#SoilStateAttribute>)
+
+SubClassOf(rsdo:SoilStateAttribute rsdo:SoilAttribute)
+
+# Class: <https://w3id.org/rsdo#SolePlateElement> (<https://w3id.org/rsdo#SolePlateElement>)
+
+SubClassOf(rsdo:SolePlateElement rsdo:TunnelBodyElement)
+
+# Class: <https://w3id.org/rsdo#SolidElement> (<https://w3id.org/rsdo#SolidElement>)
+
+SubClassOf(rsdo:SolidElement bpo:Element)
+
+# Class: <https://w3id.org/rsdo#SolidStructure> (<https://w3id.org/rsdo#SolidStructure>)
+
+SubClassOf(rsdo:SolidStructure rsdo:RockStructureTypeAttribute)
+
+# Class: <https://w3id.org/rsdo#Speed> (<https://w3id.org/rsdo#Speed>)
+
+SubClassOf(rsdo:Speed rsdo:FunctionalAttribute)
+
+# Class: <https://w3id.org/rsdo#SteepTerrain> (<https://w3id.org/rsdo#SteepTerrain>)
+
+SubClassOf(rsdo:SteepTerrain rsdo:Topography)
+
+# Class: <https://w3id.org/rsdo#StepQuantity> (<https://w3id.org/rsdo#StepQuantity>)
+
+SubClassOf(rsdo:StepQuantity rsdo:Quantity)
+
+# Class: <https://w3id.org/rsdo#SteppedEndWallElement> (<https://w3id.org/rsdo#SteppedEndWallElement>)
+
+SubClassOf(rsdo:SteppedEndWallElement rsdo:TunnelPortalElement)
+
+# Class: <https://w3id.org/rsdo#SteppedTunnelPortal> (<https://w3id.org/rsdo#SteppedTunnelPortal>)
+
+SubClassOf(rsdo:SteppedTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#StraightCutTunnelPortal> (<https://w3id.org/rsdo#StraightCutTunnelPortal>)
+
+SubClassOf(rsdo:StraightCutTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Strength> (<https://w3id.org/rsdo#Strength>)
+
+SubClassOf(rsdo:Strength rsdo:MaterialAttribute)
+
+# Class: <https://w3id.org/rsdo#StructuralAttribute> (<https://w3id.org/rsdo#StructuralAttribute>)
+
+SubClassOf(rsdo:StructuralAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight> (<https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight>)
+
+SubClassOf(rsdo:SubgradeBoxGirderSectionHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#Subsidence> (<https://w3id.org/rsdo#Subsidence>)
+
+SubClassOf(rsdo:Subsidence rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#SubsidenceElement> (<https://w3id.org/rsdo#SubsidenceElement>)
+
+SubClassOf(rsdo:SubsidenceElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#TangentialTunnelPortal> (<https://w3id.org/rsdo#TangentialTunnelPortal>)
+
+SubClassOf(rsdo:TangentialTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Temperature> (<https://w3id.org/rsdo#Temperature>)
+
+SubClassOf(rsdo:Temperature rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#TemperatureControl> (<https://w3id.org/rsdo#TemperatureControl>)
+
+SubClassOf(rsdo:TemperatureControl rsdo:FunctionalAttribute)
+
+# Class: <https://w3id.org/rsdo#TemporalAttribute> (<https://w3id.org/rsdo#TemporalAttribute>)
+
+SubClassOf(rsdo:TemporalAttribute rsdo:SharedAttribute)
+
+# Class: <https://w3id.org/rsdo#Texture> (<https://w3id.org/rsdo#Texture>)
+
+SubClassOf(rsdo:Texture rsdo:MaterialAttribute)
+
+# Class: <https://w3id.org/rsdo#ThickLayer> (<https://w3id.org/rsdo#ThickLayer>)
+
+SubClassOf(rsdo:ThickLayer rsdo:RockLayerThicknessAttribute)
+
+# Class: <https://w3id.org/rsdo#Thickness> (<https://w3id.org/rsdo#Thickness>)
+
+SubClassOf(rsdo:Thickness rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#ThinLayer> (<https://w3id.org/rsdo#ThinLayer>)
+
+SubClassOf(rsdo:ThinLayer rsdo:RockLayerThicknessAttribute)
+
+# Class: <https://w3id.org/rsdo#Topography> (<https://w3id.org/rsdo#Topography>)
+
+SubClassOf(rsdo:Topography rsdo:ProfessionSurvey)
+
+# Class: <https://w3id.org/rsdo#TopographyAttribute> (<https://w3id.org/rsdo#TopographyAttribute>)
+
+SubClassOf(rsdo:TopographyAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#TopographyElement> (<https://w3id.org/rsdo#TopographyElement>)
+
+SubClassOf(rsdo:TopographyElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#TopographyPosition> (<https://w3id.org/rsdo#TopographyPosition>)
+
+SubClassOf(rsdo:TopographyPosition rsdo:TopographyAttribute)
+
+# Class: <https://w3id.org/rsdo#Track> (<https://w3id.org/rsdo#Track>)
+
+SubClassOf(rsdo:Track rsdo:ProfessionDesign)
+
+# Class: <https://w3id.org/rsdo#TrackElement> (<https://w3id.org/rsdo#TrackElement>)
+
+AnnotationAssertion(rdfs:comment rsdo:TrackElement "这里只抽象出了一个构件，没有按照IFD扩展")
+SubClassOf(rsdo:TrackElement rsdo:SolidElement)
+
+# Class: <https://w3id.org/rsdo#TrackHeight> (<https://w3id.org/rsdo#TrackHeight>)
+
+SubClassOf(rsdo:TrackHeight rsdo:Height)
+
+# Class: <https://w3id.org/rsdo#TrackLineProjectionElevation> (<https://w3id.org/rsdo#TrackLineProjectionElevation>)
+
+SubClassOf(rsdo:TrackLineProjectionElevation rsdo:Elevation)
+
+# Class: <https://w3id.org/rsdo#TransverseBearingCenterDistance> (<https://w3id.org/rsdo#TransverseBearingCenterDistance>)
+
+SubClassOf(rsdo:TransverseBearingCenterDistance rsdo:Distance)
+
+# Class: <https://w3id.org/rsdo#TransverseSlabLength> (<https://w3id.org/rsdo#TransverseSlabLength>)
+
+SubClassOf(rsdo:TransverseSlabLength rsdo:Length)
+
+# Class: <https://w3id.org/rsdo#TruncatedHornCutTunnelPortal> (<https://w3id.org/rsdo#TruncatedHornCutTunnelPortal>)
+
+SubClassOf(rsdo:TruncatedHornCutTunnelPortal rsdo:TunnelPortal)
+
+# Class: <https://w3id.org/rsdo#Tunnel> (<https://w3id.org/rsdo#Tunnel>)
+
+SubClassOf(rsdo:Tunnel rsdo:ProfessionDesign)
+
+# Class: <https://w3id.org/rsdo#Tunnel0201InnerContour> (<https://w3id.org/rsdo#Tunnel0201InnerContour>)
+
+SubClassOf(rsdo:Tunnel0201InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#Tunnel0301InnerContour> (<https://w3id.org/rsdo#Tunnel0301InnerContour>)
+
+SubClassOf(rsdo:Tunnel0301InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#Tunnel1001InnerContour> (<https://w3id.org/rsdo#Tunnel1001InnerContour>)
+
+SubClassOf(rsdo:Tunnel1001InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#Tunnel1002InnerContour> (<https://w3id.org/rsdo#Tunnel1002InnerContour>)
+
+SubClassOf(rsdo:Tunnel1002InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#Tunnel1201InnerContour> (<https://w3id.org/rsdo#Tunnel1201InnerContour>)
+
+SubClassOf(rsdo:Tunnel1201InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#Tunnel1202InnerContour> (<https://w3id.org/rsdo#Tunnel1202InnerContour>)
+
+SubClassOf(rsdo:Tunnel1202InnerContour rsdo:TunnelInnerContourElement)
+
+# Class: <https://w3id.org/rsdo#TunnelAttribute> (<https://w3id.org/rsdo#TunnelAttribute>)
+
+SubClassOf(rsdo:TunnelAttribute rsdo:ProfessionAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelBodyElement> (<https://w3id.org/rsdo#TunnelBodyElement>)
+
+SubClassOf(rsdo:TunnelBodyElement rsdo:SolidElement)
+
+# Class: <https://w3id.org/rsdo#TunnelInnerContourElement> (<https://w3id.org/rsdo#TunnelInnerContourElement>)
+
+SubClassOf(rsdo:TunnelInnerContourElement rsdo:AbstractElement)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRule1 rsdo:TunnelLiningCrossSectionConstructionRuleAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRule2 rsdo:TunnelLiningCrossSectionConstructionRuleAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRule3 rsdo:TunnelLiningCrossSectionConstructionRuleAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRule4 rsdo:TunnelLiningCrossSectionConstructionRuleAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRule5 rsdo:TunnelLiningCrossSectionConstructionRuleAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute> (<https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute>)
+
+SubClassOf(rsdo:TunnelLiningCrossSectionConstructionRuleAttribute rsdo:TunnelAttribute)
+DisjointClasses(rsdo:TunnelLiningCrossSectionConstructionRuleAttribute rsdo:TunnelPositionalRelationshipAttribute)
+
+# Class: <https://w3id.org/rsdo#TunnelPortal> (<https://w3id.org/rsdo#TunnelPortal>)
+
+SubClassOf(rsdo:TunnelPortal rsdo:ProjectDesign)
+
+# Class: <https://w3id.org/rsdo#TunnelPortalElement> (<https://w3id.org/rsdo#TunnelPortalElement>)
+
+SubClassOf(rsdo:TunnelPortalElement rsdo:SolidElement)
+
+# Class: <https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute> (<https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute>)
+
+SubClassOf(rsdo:TunnelPositionalRelationshipAttribute rsdo:TunnelAttribute)
+
+# Class: <https://w3id.org/rsdo#Unweathered> (<https://w3id.org/rsdo#Unweathered>)
+
+SubClassOf(rsdo:Unweathered rsdo:RockWeatheringDegreeAttribute)
+
+# Class: <https://w3id.org/rsdo#VeryWet> (<https://w3id.org/rsdo#VeryWet>)
+
+SubClassOf(rsdo:VeryWet rsdo:SoilMoistureContentAttribute)
+
+# Class: <https://w3id.org/rsdo#VolcanicEruption> (<https://w3id.org/rsdo#VolcanicEruption>)
+
+SubClassOf(rsdo:VolcanicEruption rsdo:ProjectSurvey)
+
+# Class: <https://w3id.org/rsdo#VolcanicEruptionElement> (<https://w3id.org/rsdo#VolcanicEruptionElement>)
+
+SubClassOf(rsdo:VolcanicEruptionElement rsdo:GeologicalDisasterElement)
+
+# Class: <https://w3id.org/rsdo#Volume> (<https://w3id.org/rsdo#Volume>)
+
+SubClassOf(rsdo:Volume rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#WaterContent> (<https://w3id.org/rsdo#WaterContent>)
+
+SubClassOf(rsdo:WaterContent rsdo:Ratio)
+
+# Class: <https://w3id.org/rsdo#WaveSpeedRatioKv> (<https://w3id.org/rsdo#WaveSpeedRatioKv>)
+
+SubClassOf(rsdo:WaveSpeedRatioKv rsdo:Ratio)
+
+# Class: <https://w3id.org/rsdo#Weight> (<https://w3id.org/rsdo#Weight>)
+
+SubClassOf(rsdo:Weight rsdo:PhysicalAttribute)
+
+# Class: <https://w3id.org/rsdo#Wet> (<https://w3id.org/rsdo#Wet>)
+
+SubClassOf(rsdo:Wet rsdo:SoilMoistureContentAttribute)
+
+# Class: <https://w3id.org/rsdo#Width> (<https://w3id.org/rsdo#Width>)
+
+SubClassOf(rsdo:Width rsdo:GeometricAttribute)
+
+# Class: <https://w3id.org/rsdo#WingWallTunnelPortal> (<https://w3id.org/rsdo#WingWallTunnelPortal>)
+
+SubClassOf(rsdo:WingWallTunnelPortal rsdo:TunnelPortal)
+
+
+DisjointClasses(bot:Building bot:Site bot:Space bot:Storey rsdo:ProfessionSpace rsdo:ProjectSpace rsdo:RailwaySpace)
+DisjointClasses(rsdo:Angle rsdo:Area rsdo:Depth rsdo:Distance rsdo:Elevation rsdo:Height rsdo:Length rsdo:Radius rsdo:Thickness rsdo:Volume rsdo:Width)
+DisjointClasses(rsdo:BeamBottomToBearingStoneTopHeight rsdo:BeamBottomToPierTopHeight rsdo:BearingStoneCalculatedHeight rsdo:InitialTotalHeightOfBridgePier rsdo:InnerContourHeight rsdo:LargeMileBearingStoneHeight rsdo:PierHeight rsdo:SmallMileBearingStoneHeight rsdo:SubgradeBoxGirderSectionHeight rsdo:TrackHeight)
+DisjointClasses(rsdo:BeamBottomToBearingStoneTopHeight rsdo:BeamBottomToPierTopHeight rsdo:BearingStoneCalculatedHeight rsdo:InitialTotalHeightOfBridgePier rsdo:InnerContourHeight rsdo:LargeMileBearingStoneHeight rsdo:SmallMileBearingStoneHeight rsdo:SubgradeBoxGirderSectionHeight rsdo:TrackHeight)
+DisjointClasses(rsdo:BeamBottomToBearingStoneTopHeight rsdo:BeamBottomToPierTopHeight rsdo:BearingStoneCalculatedHeight rsdo:InnerContourHeight rsdo:LargeMileBearingStoneHeight rsdo:SmallMileBearingStoneHeight rsdo:SubgradeBoxGirderSectionHeight)
+DisjointClasses(rsdo:BeamBottomToBearingStoneTopHeight rsdo:BeamBottomToPierTopHeight rsdo:BearingStoneCalculatedHeight rsdo:InnerContourHeight rsdo:LargeMileBearingStoneHeight rsdo:SmallMileBearingStoneHeight rsdo:SubgradeBoxGirderSectionHeight rsdo:TrackHeight)
+DisjointClasses(rsdo:BearingQuantity rsdo:InnerContourCenterQuantity rsdo:RailwayLineQuantity rsdo:StepQuantity)
+DisjointClasses(rsdo:BearingToJointCenterlineDistance rsdo:CrownTopToTrackSurfaceDistance rsdo:CurveWallPointToBottomDistance rsdo:LongitudinalBearingCenterDistance rsdo:LongitudinalBearingToBeamEndDistance rsdo:RailwayLineDistance rsdo:TransverseBearingCenterDistance)
+DisjointClasses(rsdo:Blocky rsdo:Columnar rsdo:DebrisLike rsdo:FragmentedBlocky rsdo:GiantBlocky rsdo:Layered rsdo:Platy)
+DisjointClasses(rsdo:BlockyStructure rsdo:FracturedStructure rsdo:GranularStructure rsdo:LayeredStructure rsdo:SolidStructure)
+DisjointClasses(rsdo:Bridge rsdo:RailwayLine rsdo:Track rsdo:Tunnel)
+DisjointClasses(rsdo:BridgeCrossSectionElement rsdo:GeologicalDisasterElement rsdo:LiningCrossSectionElement rsdo:RailwayLineCrossSectionElement rsdo:RailwayLineElement rsdo:TopographyElement rsdo:TunnelInnerContourElement)
+DisjointClasses(rsdo:Capacity rsdo:Efficiency rsdo:FlowRate rsdo:Speed rsdo:TemperatureControl)
+DisjointClasses(rsdo:ChemicalAttribute rsdo:FunctionalAttribute rsdo:GeometricAttribute rsdo:IndexAttribute rsdo:PhysicalAttribute rsdo:ShapeAttribute rsdo:TemporalAttribute)
+DisjointClasses(rsdo:Complete rsdo:ExtremelyFragmented rsdo:Fragmented rsdo:RelativelyComplete rsdo:RelativelyFragmented)
+DisjointClasses(rsdo:CompletelyWeathered rsdo:IntenseWeathering rsdo:ModerateWeathering rsdo:ResidualSoil rsdo:SlightWeathering rsdo:Unweathered)
+DisjointClasses(rsdo:Composition rsdo:Elasticity rsdo:MaterialType rsdo:Strength rsdo:Texture)
+DisjointClasses(rsdo:CrownArchElement rsdo:CutAndCoverStructureElement rsdo:SolePlateElement)
+DisjointClasses(rsdo:CrownTopCenterAngle rsdo:CrownWaistCenterAngle rsdo:ObliqueIntersectionAngle)
+DisjointClasses(rsdo:CrownTopRadius rsdo:CrownWaistRadius rsdo:CurveRadius)
+DisjointClasses(rsdo:CrownTopToTrackSurfaceDistance rsdo:CurveWallPointToBottomDistance rsdo:LongitudinalBearingCenterDistance rsdo:LongitudinalBearingToBeamEndDistance rsdo:RailwayLineDistance rsdo:TransverseBearingCenterDistance)
+DisjointClasses(rsdo:CrownTopToTrackSurfaceDistance rsdo:CurveWallPointToBottomDistance rsdo:LongitudinalBearingCenterDistance rsdo:RailwayLineDistance)
+DisjointClasses(rsdo:CrownTopToTrackSurfaceDistance rsdo:CurveWallPointToBottomDistance rsdo:LongitudinalBearingCenterDistance rsdo:RailwayLineDistance rsdo:TransverseBearingCenterDistance)
+DisjointClasses(rsdo:CrownTopToTrackSurfaceDistance rsdo:CurveWallPointToBottomDistance rsdo:RailwayLineDistance)
+DisjointClasses(rsdo:Dense rsdo:MediumDensity rsdo:SlightlyDense)
+DisjointClasses(rsdo:Duststorm rsdo:Earthquake rsdo:FrostHeaving rsdo:KarstDisasters rsdo:Landslide rsdo:Mudflow rsdo:Rockfall rsdo:Subsidence rsdo:VolcanicEruption)
+DisjointClasses(rsdo:ExtraThickLayer rsdo:MediumThickLayer rsdo:ThickLayer rsdo:ThinLayer)
+DisjointClasses(rsdo:ExtremelyPoor rsdo:Good rsdo:Poor rsdo:RelativelyGood rsdo:RelativelyPoor)
+DisjointClasses(rsdo:ExtremelySoftRock rsdo:HardRock rsdo:RelativelyHardRock rsdo:RelativelySoftRock rsdo:SoftRock)
+DisjointClasses(rsdo:FlowablePlastic rsdo:Hard rsdo:HardPlastic rsdo:Plastic rsdo:SoftPlastic)
+DisjointClasses(rsdo:FreightTransport rsdo:PassengerAndFreightCoexistence rsdo:PassengerTransport)
+DisjointClasses(rsdo:InnerContourCenterQuantity rsdo:RailwayLineQuantity rsdo:StepQuantity)
+DisjointClasses(rsdo:IntegrityIndex rsdo:LiquidityIndex rsdo:PlasticityIndex)
+DisjointClasses(rsdo:IntegrityIndex rsdo:LiquidityIndex rsdo:PlasticityIndex rsdo:RQD)
+DisjointClasses(rsdo:LeftAuxiliaryRetainingWallElement rsdo:LeftPierColumnElement rsdo:LeftSideWallElement rsdo:LeftWingWallElement rsdo:MainEndWallElement rsdo:MedianWallElement rsdo:RightAuxiliaryRetainingWallElement rsdo:RightPierColumnElement rsdo:RightSideWallElement rsdo:RightWingWallElement rsdo:SteppedEndWallElement)
+DisjointClasses(rsdo:LongitudinalSlope rsdo:SlopeRatio rsdo:WaterContent rsdo:WaveSpeedRatioKv)
+DisjointClasses(rsdo:MilepostNumber rsdo:RailwayLineTractionTypeAttribute rsdo:RailwayLineUsageAndFunctionAttribute)
+DisjointClasses(rsdo:ProfessionDesign rsdo:ProfessionSurvey rsdo:ProjectDesign rsdo:ProjectSurvey rsdo:Railway)
+DisjointClasses(rsdo:RailwayLine20082301 rsdo:RailwayLine20112351-Ⅲ rsdo:RailwayLine20182332)
+DisjointClasses(rsdo:RockHardnessDegreeAttribute rsdo:RockIntegrityDegreeAttribute rsdo:RockLayerThicknessAttribute rsdo:RockQualityAttribute rsdo:RockStructuralShapeAttribute rsdo:RockStructureTypeAttribute rsdo:RockWeatheringDegreeAttribute)
+DisjointClasses(rsdo:SlightlyWet rsdo:VeryWet rsdo:Wet)
+DisjointClasses(rsdo:Tunnel0201InnerContour rsdo:Tunnel0301InnerContour rsdo:Tunnel1001InnerContour rsdo:Tunnel1002InnerContour rsdo:Tunnel1201InnerContour rsdo:Tunnel1202InnerContour)
+DisjointClasses(rsdo:TunnelLiningCrossSectionConstructionRule1 rsdo:TunnelLiningCrossSectionConstructionRule2 rsdo:TunnelLiningCrossSectionConstructionRule3 rsdo:TunnelLiningCrossSectionConstructionRule4 rsdo:TunnelLiningCrossSectionConstructionRule5)
+)

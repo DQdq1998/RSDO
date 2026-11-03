@@ -1,0 +1,2459 @@
+@prefix : <https://w3id.org/rsdo#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix bpo: <https://w3id.org/bpo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rsdo: <https://w3id.org/rsdo#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <https://schema.org/> .
+@base <https://w3id.org/rsdo#> .
+
+<https://w3id.org/rsdo> rdf:type owl:Ontology ;
+                         owl:versionIRI <https://w3id.org/rsdo/1.0> ;
+                         owl:imports <https://w3id.org/bpo/1-2> ;
+                         dc:created "2025-06-10" ;
+                         dc:creator "Qiang Du" ;
+                         dc:description "The Railway Survey and Design Ontology (RSDO) is a modular ontology for railway survey and design information modelling. It is organised in five modules - spatial, complementary semantic, component, attribute and unit - and reuses the Building Topology Ontology (BOT) and the Building Product Ontology (BPO)."@en ;
+                         dc:license "https://creativecommons.org/licenses/by/4.0/" ;
+                         dc:modified "2026-11-03" ;
+                         dc:title "Railway Survey and Design Ontology (RSDO)"@en ,
+                                  "铁路勘测设计本体 (RSDO)"@zh ;
+                         vann:preferredNamespacePrefix "rsdo" ;
+                         vann:preferredNamespaceUri "https://w3id.org/rsdo#" ;
+                         rdfs:seeAlso "https://w3id.org/rsdo" ;
+                         owl:versionInfo "1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://qudt.org/schema/qudt/unit
+qudt:unit rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/bpo#hasAttribute
+bpo:hasAttribute rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/rsdo#RailwaySemanticBelongsTo
+rsdo:RailwaySemanticBelongsTo rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf rsdo:semanticBelongsTo ;
+                              owl:inverseOf rsdo:hasRailwaySemantic .
+
+
+###  https://w3id.org/rsdo#hasProfessionSemantic
+rsdo:hasProfessionSemantic rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf rsdo:hasSemantic ;
+                           owl:inverseOf rsdo:professionSemanticBelongsTo ;
+                           rdfs:domain rsdo:ProfessionSpace .
+
+
+###  https://w3id.org/rsdo#hasProjectSemantic
+rsdo:hasProjectSemantic rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf rsdo:hasSemantic ;
+                        owl:inverseOf rsdo:projectSemanticBelongsTo ;
+                        rdfs:domain rsdo:ProjectSpace .
+
+
+###  https://w3id.org/rsdo#hasRailwaySemantic
+rsdo:hasRailwaySemantic rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf rsdo:hasSemantic .
+
+
+###  https://w3id.org/rsdo#hasSemantic
+rsdo:hasSemantic rdf:type owl:ObjectProperty ;
+                 owl:inverseOf rsdo:semanticBelongsTo ;
+                 rdfs:domain bot:Zone .
+
+
+###  https://w3id.org/rsdo#hasUnit
+rsdo:hasUnit rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf qudt:unit ;
+             rdfs:domain rsdo:Quantity ;
+             rdfs:range qudt:Unit ;
+             rdfs:comment "Attaches a quantity attribute to its unit of measure; a sub-property of qudt:unit, ranging over QUDT unit individuals such as unit:MPA, unit:M, unit:MilliM or unit:DEG."@en ,
+                          "将量值型属性与其计量单位关联，是 qudt:unit 的子属性；单位个体来自 QUDT。"@zh ;
+             rdfs:label "has unit of measure"@en .
+
+
+###  https://w3id.org/rsdo#professionSemanticBelongsTo
+rsdo:professionSemanticBelongsTo rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf rsdo:semanticBelongsTo .
+
+
+###  https://w3id.org/rsdo#projectSemanticBelongsTo
+rsdo:projectSemanticBelongsTo rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf rsdo:semanticBelongsTo .
+
+
+###  https://w3id.org/rsdo#semanticBelongsTo
+rsdo:semanticBelongsTo rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/rsdo#hasValue
+rsdo:hasValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain bpo:Attribute .
+
+
+###  https://w3id.org/rsdo#hasXCoordinate
+rsdo:hasXCoordinate rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/rsdo#hasYCoordinate
+rsdo:hasYCoordinate rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/rsdo#hasZCoordinate
+rsdo:hasZCoordinate rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/rsdo#isInScenicAreaOrTown
+rsdo:isInScenicAreaOrTown rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/Quantity
+qudt:Quantity rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Building
+bot:Building rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Site
+bot:Site rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Space
+bot:Space rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Storey
+bot:Storey rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Zone
+bot:Zone rdf:type owl:Class .
+
+
+###  https://w3id.org/bpo#Attribute
+bpo:Attribute rdf:type owl:Class .
+
+
+###  https://w3id.org/bpo#Element
+bpo:Element rdf:type owl:Class .
+
+
+###  https://w3id.org/bpo#RangedAttribute
+bpo:RangedAttribute rdf:type owl:Class .
+
+
+###  https://w3id.org/rsdo#AA
+rsdo:AA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#AB
+rsdo:AB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#AbstractElement
+rsdo:AbstractElement rdf:type owl:Class ;
+                     rdfs:subClassOf bpo:Element ;
+                     owl:disjointWith rsdo:SolidElement .
+
+
+###  https://w3id.org/rsdo#Angle
+rsdo:Angle rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#Area
+rsdo:Area rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#BA
+rsdo:BA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#BB
+rsdo:BB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#BallastedTrack
+rsdo:BallastedTrack rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:Track ;
+                    owl:disjointWith rsdo:BallastlessTrack ;
+                    rdfs:comment "有无砟道床的是无砟轨道" .
+
+
+###  https://w3id.org/rsdo#BallastlessTrack
+rsdo:BallastlessTrack rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:Track ;
+                      rdfs:comment "有碎石道床的是有砟轨道" .
+
+
+###  https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight
+rsdo:BeamBottomToBearingStoneTopHeight rdf:type owl:Class ;
+                                       rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#BeamBottomToPierTopHeight
+rsdo:BeamBottomToPierTopHeight rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#BeamJointWidth
+rsdo:BeamJointWidth rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:Width .
+
+
+###  https://w3id.org/rsdo#BearingQuantity
+rsdo:BearingQuantity rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:Quantity .
+
+
+###  https://w3id.org/rsdo#BearingStoneCalculatedHeight
+rsdo:BearingStoneCalculatedHeight rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#BearingToJointCenterlineDistance
+rsdo:BearingToJointCenterlineDistance rdf:type owl:Class ;
+                                      rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#Blocky
+rsdo:Blocky rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#BlockyStructure
+rsdo:BlockyStructure rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:RockStructureTypeAttribute .
+
+
+###  https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection
+rsdo:BottomAndTrackFoundationLeftIntersection rdf:type owl:Class ;
+                                              rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection
+rsdo:BottomAndTrackFoundationRightIntersection rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#Bridge
+rsdo:Bridge rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:ProfessionDesign .
+
+
+###  https://w3id.org/rsdo#BridgeCrossSectionElement
+rsdo:BridgeCrossSectionElement rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#CA
+rsdo:CA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#CB
+rsdo:CB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack
+rsdo:CRTSⅠDoubleBlockBallastlessTrack rdf:type owl:Class ;
+                                      rdfs:subClassOf rsdo:BallastlessTrack .
+
+
+###  https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack
+rsdo:CRTSⅠSlabBallastlessTrack rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:BallastlessTrack .
+
+
+###  https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack
+rsdo:CRTSⅢSlabBallastlessTrack rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:BallastlessTrack .
+
+
+###  https://w3id.org/rsdo#Capacity
+rsdo:Capacity rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:FunctionalAttribute .
+
+
+###  https://w3id.org/rsdo#ChemicalAttribute
+rsdo:ChemicalAttribute rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#Columnar
+rsdo:Columnar rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#CombinedTunnelPortal
+rsdo:CombinedTunnelPortal rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Complete
+rsdo:Complete rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:RockIntegrityDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#CompletelyWeathered
+rsdo:CompletelyWeathered rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#Composition
+rsdo:Composition rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:MaterialAttribute .
+
+
+###  https://w3id.org/rsdo#ControlPointAttribute
+rsdo:ControlPointAttribute rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#ConventionalSpeedRailway
+rsdo:ConventionalSpeedRailway rdf:type owl:Class ;
+                              rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#CrownArchElement
+rsdo:CrownArchElement rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:TunnelBodyElement .
+
+
+###  https://w3id.org/rsdo#CrownTopCenterAngle
+rsdo:CrownTopCenterAngle rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:Angle .
+
+
+###  https://w3id.org/rsdo#CrownTopRadius
+rsdo:CrownTopRadius rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:Radius .
+
+
+###  https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance
+rsdo:CrownTopToTrackSurfaceDistance rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#CrownWaistCenterAngle
+rsdo:CrownWaistCenterAngle rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:Angle .
+
+
+###  https://w3id.org/rsdo#CrownWaistRadius
+rsdo:CrownWaistRadius rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:Radius .
+
+
+###  https://w3id.org/rsdo#CurveRadius
+rsdo:CurveRadius rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:Radius .
+
+
+###  https://w3id.org/rsdo#CurveWallPointToBottomDistance
+rsdo:CurveWallPointToBottomDistance rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#CurvedTangentTunnelPortal
+rsdo:CurvedTangentTunnelPortal rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#CutAndCoverStructureElement
+rsdo:CutAndCoverStructureElement rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:TunnelBodyElement .
+
+
+###  https://w3id.org/rsdo#DA
+rsdo:DA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#DB
+rsdo:DB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#DebrisLike
+rsdo:DebrisLike rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#Dense
+rsdo:Dense rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:SoilCompactionDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#Density
+rsdo:Density rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#Depth
+rsdo:Depth rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#DesignTrackElevation
+rsdo:DesignTrackElevation rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Elevation .
+
+
+###  https://w3id.org/rsdo#Diesel
+rsdo:Diesel rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:RailwayLineTractionTypeAttribute ;
+            owl:disjointWith rsdo:Electric .
+
+
+###  https://w3id.org/rsdo#Distance
+rsdo:Distance rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#Duststorm
+rsdo:Duststorm rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#DuststormElement
+rsdo:DuststormElement rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#EA
+rsdo:EA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#EB
+rsdo:EB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#Earthquake
+rsdo:Earthquake rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#EarthquakeElement
+rsdo:EarthquakeElement rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#EavesCutTunnelPortal
+rsdo:EavesCutTunnelPortal rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Efficiency
+rsdo:Efficiency rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:FunctionalAttribute .
+
+
+###  https://w3id.org/rsdo#Elasticity
+rsdo:Elasticity rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:MaterialAttribute .
+
+
+###  https://w3id.org/rsdo#Electric
+rsdo:Electric rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:RailwayLineTractionTypeAttribute .
+
+
+###  https://w3id.org/rsdo#Elevation
+rsdo:Elevation rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#EndWallTunnelPortal
+rsdo:EndWallTunnelPortal rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#ExtraThickLayer
+rsdo:ExtraThickLayer rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:RockLayerThicknessAttribute .
+
+
+###  https://w3id.org/rsdo#ExtremelyFragmented
+rsdo:ExtremelyFragmented rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:RockIntegrityDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#ExtremelyPoor
+rsdo:ExtremelyPoor rdf:type owl:Class ;
+                   rdfs:subClassOf rsdo:RockQualityAttribute .
+
+
+###  https://w3id.org/rsdo#ExtremelySoftRock
+rsdo:ExtremelySoftRock rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:RockHardnessDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#FA
+rsdo:FA rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#FB
+rsdo:FB rdf:type owl:Class ;
+        rdfs:subClassOf rsdo:LiningCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#FlowRate
+rsdo:FlowRate rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:FunctionalAttribute .
+
+
+###  https://w3id.org/rsdo#FlowablePlastic
+rsdo:FlowablePlastic rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:SoilStateAttribute .
+
+
+###  https://w3id.org/rsdo#FracturedStructure
+rsdo:FracturedStructure rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RockStructureTypeAttribute .
+
+
+###  https://w3id.org/rsdo#Fragmented
+rsdo:Fragmented rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:RockIntegrityDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#FragmentedBlocky
+rsdo:FragmentedBlocky rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#FreightRailway
+rsdo:FreightRailway rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#FreightTransport
+rsdo:FreightTransport rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:RailwayLineUsageAndFunctionAttribute .
+
+
+###  https://w3id.org/rsdo#FrostHeaving
+rsdo:FrostHeaving rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#FrostHeavingElement
+rsdo:FrostHeavingElement rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#FunctionalAttribute
+rsdo:FunctionalAttribute rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#GeologicalAttribute
+rsdo:GeologicalAttribute rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#GeologicalDisasterElement
+rsdo:GeologicalDisasterElement rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#Geology
+rsdo:Geology rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:ProfessionSurvey .
+
+
+###  https://w3id.org/rsdo#GeologyElement
+rsdo:GeologyElement rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:SolidElement .
+
+
+###  https://w3id.org/rsdo#GeometricAttribute
+rsdo:GeometricAttribute rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#GiantBlocky
+rsdo:GiantBlocky rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#Good
+rsdo:Good rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:RockQualityAttribute .
+
+
+###  https://w3id.org/rsdo#GradeⅠRock
+rsdo:GradeⅠRock rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( rsdo:RockElement
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty bpo:hasAttribute ;
+                                                             owl:someValuesFrom rsdo:Complete
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty bpo:hasAttribute ;
+                                                             owl:someValuesFrom rsdo:HardRock
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf rsdo:RockElement .
+
+
+###  https://w3id.org/rsdo#GradeⅡRock
+rsdo:GradeⅡRock rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Complete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyHardRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:HardRock
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyComplete
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                  )
+                                    ] ;
+                rdfs:subClassOf rsdo:RockElement .
+
+
+###  https://w3id.org/rsdo#GradeⅢRock
+rsdo:GradeⅢRock rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Complete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelySoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:HardRock
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyFragmented
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyComplete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyHardRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                  )
+                                    ] ;
+                rdfs:subClassOf rsdo:RockElement .
+
+
+###  https://w3id.org/rsdo#GradeⅣRock
+rsdo:GradeⅣRock rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Complete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:SoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Fragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyHardRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyComplete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelySoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyComplete
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:SoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyFragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyHardRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyFragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelySoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                  )
+                                    ] ;
+                rdfs:subClassOf rsdo:RockElement .
+
+
+###  https://w3id.org/rsdo#GradeⅤRock
+rsdo:GradeⅤRock rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:ExtremelyFragmented
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:ExtremelySoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Fragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelySoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:Fragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:SoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                    [ owl:intersectionOf ( rsdo:RockElement
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:RelativelyFragmented
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty bpo:hasAttribute ;
+                                                                             owl:someValuesFrom rsdo:SoftRock
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ]
+                                                  )
+                                    ] ;
+                rdfs:subClassOf rsdo:RockElement .
+
+
+###  https://w3id.org/rsdo#GranularStructure
+rsdo:GranularStructure rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:RockStructureTypeAttribute .
+
+
+###  https://w3id.org/rsdo#Hard
+rsdo:Hard rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:SoilStateAttribute .
+
+
+###  https://w3id.org/rsdo#HardPlastic
+rsdo:HardPlastic rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:SoilStateAttribute .
+
+
+###  https://w3id.org/rsdo#HardRock
+rsdo:HardRock rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:RockHardnessDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#Hardness
+rsdo:Hardness rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#Height
+rsdo:Height rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#HighSpeedRailway
+rsdo:HighSpeedRailway rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#Hydrology
+rsdo:Hydrology rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:ProfessionSurvey .
+
+
+###  https://w3id.org/rsdo#IndexAttribute
+rsdo:IndexAttribute rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#InitialTotalHeightOfBridgePier
+rsdo:InitialTotalHeightOfBridgePier rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection
+rsdo:InnerContourAndBaseFlangeLeftIntersection rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection
+rsdo:InnerContourAndBaseFlangeLeftLowerIntersection rdf:type owl:Class ;
+                                                    rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection
+rsdo:InnerContourAndBaseFlangeLeftUpperIntersection rdf:type owl:Class ;
+                                                    rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection
+rsdo:InnerContourAndBaseFlangeRightIntersection rdf:type owl:Class ;
+                                                rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection
+rsdo:InnerContourAndBaseFlangeRightLowerIntersection rdf:type owl:Class ;
+                                                     rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection
+rsdo:InnerContourAndBaseFlangeRightUpperIntersection rdf:type owl:Class ;
+                                                     rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourCenterQuantity
+rsdo:InnerContourCenterQuantity rdf:type owl:Class ;
+                                rdfs:subClassOf rsdo:Quantity .
+
+
+###  https://w3id.org/rsdo#InnerContourCrownPoint
+rsdo:InnerContourCrownPoint rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourHeight
+rsdo:InnerContourHeight rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#InnerContourLeftArchFootPoint
+rsdo:InnerContourLeftArchFootPoint rdf:type owl:Class ;
+                                   rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourLeftArchWaistPoint
+rsdo:InnerContourLeftArchWaistPoint rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourMaxSpanPoint
+rsdo:InnerContourMaxSpanPoint rdf:type owl:Class ;
+                              rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourMinSpanPoint
+rsdo:InnerContourMinSpanPoint rdf:type owl:Class ;
+                              rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourOffsetThickness
+rsdo:InnerContourOffsetThickness rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:Thickness ;
+                                 owl:disjointWith rsdo:SingleLayerThickness .
+
+
+###  https://w3id.org/rsdo#InnerContourRightArchFootPoint
+rsdo:InnerContourRightArchFootPoint rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#InnerContourRightArchWaistPoint
+rsdo:InnerContourRightArchWaistPoint rdf:type owl:Class ;
+                                     rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#IntegrityIndex
+rsdo:IntegrityIndex rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:IndexAttribute ;
+                    owl:disjointWith rsdo:LiquidityIndex .
+
+
+###  https://w3id.org/rsdo#IntenseWeathering
+rsdo:IntenseWeathering rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#Intensity6Earthquake
+rsdo:Intensity6Earthquake rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Earthquake .
+
+
+###  https://w3id.org/rsdo#Intensity7Earthquake
+rsdo:Intensity7Earthquake rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Earthquake .
+
+
+###  https://w3id.org/rsdo#Intensity8Earthquake
+rsdo:Intensity8Earthquake rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Earthquake .
+
+
+###  https://w3id.org/rsdo#Intensity9Earthquake
+rsdo:Intensity9Earthquake rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Earthquake .
+
+
+###  https://w3id.org/rsdo#IntercityRailway
+rsdo:IntercityRailway rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#KarstDisasters
+rsdo:KarstDisasters rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#KarstDisastersElement
+rsdo:KarstDisastersElement rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#Landslide
+rsdo:Landslide rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#LandslideElement
+rsdo:LandslideElement rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#LargeMileBearingStoneHeight
+rsdo:LargeMileBearingStoneHeight rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#LateralPressureTunnelPortal
+rsdo:LateralPressureTunnelPortal rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Layered
+rsdo:Layered rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#LayeredStructure
+rsdo:LayeredStructure rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:RockStructureTypeAttribute .
+
+
+###  https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement
+rsdo:LeftAuxiliaryRetainingWallElement rdf:type owl:Class ;
+                                       rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#LeftPierColumnElement
+rsdo:LeftPierColumnElement rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#LeftSideWallElement
+rsdo:LeftSideWallElement rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#LeftWingWallElement
+rsdo:LeftWingWallElement rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#Length
+rsdo:Length rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#LiningCrossSectionElement
+rsdo:LiningCrossSectionElement rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:AbstractElement ;
+                               rdfs:comment "是否还能分的更细" .
+
+
+###  https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint
+rsdo:LiningInvertedArchMaxBuriedDepthPoint rdf:type owl:Class ;
+                                           rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint
+rsdo:LiningInvertedArchSegmentLeftPoint rdf:type owl:Class ;
+                                        rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint
+rsdo:LiningInvertedArchSegmentRightPoint rdf:type owl:Class ;
+                                         rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningLeftArchWaistPoint
+rsdo:LiningLeftArchWaistPoint rdf:type owl:Class ;
+                              rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint
+rsdo:LiningLeftCurvedSideWallPoint rdf:type owl:Class ;
+                                   rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint
+rsdo:LiningLeftTransformationArcSegmentPoint rdf:type owl:Class ;
+                                             rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint
+rsdo:LiningLeftTransitionArcSegmentPoint rdf:type owl:Class ;
+                                         rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningRightArchWaistPoint
+rsdo:LiningRightArchWaistPoint rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningRightCurvedSideWallPoint
+rsdo:LiningRightCurvedSideWallPoint rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint
+rsdo:LiningRightTransformationArcSegmentPoint rdf:type owl:Class ;
+                                              rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint
+rsdo:LiningRightTransitionArcSegmentPoint rdf:type owl:Class ;
+                                          rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiningTopCrownRingPoint
+rsdo:LiningTopCrownRingPoint rdf:type owl:Class ;
+                             rdfs:subClassOf rsdo:ControlPointAttribute .
+
+
+###  https://w3id.org/rsdo#LiquidityIndex
+rsdo:LiquidityIndex rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:IndexAttribute .
+
+
+###  https://w3id.org/rsdo#LongitudinalBearingCenterDistance
+rsdo:LongitudinalBearingCenterDistance rdf:type owl:Class ;
+                                       rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance
+rsdo:LongitudinalBearingToBeamEndDistance rdf:type owl:Class ;
+                                          rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#LongitudinalSlabLength
+rsdo:LongitudinalSlabLength rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:Length .
+
+
+###  https://w3id.org/rsdo#LongitudinalSlope
+rsdo:LongitudinalSlope rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:Ratio .
+
+
+###  https://w3id.org/rsdo#MainEndWallElement
+rsdo:MainEndWallElement rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#Mass
+rsdo:Mass rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#MaterialAttribute
+rsdo:MaterialAttribute rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#MaterialType
+rsdo:MaterialType rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:MaterialAttribute .
+
+
+###  https://w3id.org/rsdo#MedianWallElement
+rsdo:MedianWallElement rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#MediumDensity
+rsdo:MediumDensity rdf:type owl:Class ;
+                   rdfs:subClassOf rsdo:SoilCompactionDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#MediumThickLayer
+rsdo:MediumThickLayer rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:RockLayerThicknessAttribute .
+
+
+###  https://w3id.org/rsdo#MilepostNumber
+rsdo:MilepostNumber rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:RailwayLineAttribute .
+
+
+###  https://w3id.org/rsdo#ModerateWeathering
+rsdo:ModerateWeathering rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#Mudflow
+rsdo:Mudflow rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#MudflowElement
+rsdo:MudflowElement rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#ObliqueIntersectionAngle
+rsdo:ObliqueIntersectionAngle rdf:type owl:Class ;
+                              rdfs:subClassOf rsdo:Angle .
+
+
+###  https://w3id.org/rsdo#ObliqueToTunnelAxis
+rsdo:ObliqueToTunnelAxis rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:TunnelPositionalRelationshipAttribute ;
+                         owl:disjointWith rsdo:OrthogonalToTunnelAxis .
+
+
+###  https://w3id.org/rsdo#OrthogonalToTunnelAxis
+rsdo:OrthogonalToTunnelAxis rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelPositionalRelationshipAttribute .
+
+
+###  https://w3id.org/rsdo#PassengerAndFreightCoexistence
+rsdo:PassengerAndFreightCoexistence rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:RailwayLineUsageAndFunctionAttribute .
+
+
+###  https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway
+rsdo:PassengerAndFreightCoexistingRailway rdf:type owl:Class ;
+                                          rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#PassengerDedicatedLineRailway
+rsdo:PassengerDedicatedLineRailway rdf:type owl:Class ;
+                                   rdfs:subClassOf rsdo:Railway .
+
+
+###  https://w3id.org/rsdo#PassengerTransport
+rsdo:PassengerTransport rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RailwayLineUsageAndFunctionAttribute .
+
+
+###  https://w3id.org/rsdo#PeakAcceleration
+rsdo:PeakAcceleration rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#PhysicalAttribute
+rsdo:PhysicalAttribute rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#PierHeight
+rsdo:PierHeight rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#PillarTypeTunnelPortal
+rsdo:PillarTypeTunnelPortal rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Plastic
+rsdo:Plastic rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:SoilStateAttribute .
+
+
+###  https://w3id.org/rsdo#PlasticityIndex
+rsdo:PlasticityIndex rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:IndexAttribute .
+
+
+###  https://w3id.org/rsdo#Platy
+rsdo:Platy rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:RockStructuralShapeAttribute .
+
+
+###  https://w3id.org/rsdo#Poor
+rsdo:Poor rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:RockQualityAttribute .
+
+
+###  https://w3id.org/rsdo#Porosity
+rsdo:Porosity rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#ProfessionAttribute
+rsdo:ProfessionAttribute rdf:type owl:Class ;
+                         rdfs:subClassOf bpo:Attribute ;
+                         owl:disjointWith rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#ProfessionDesign
+rsdo:ProfessionDesign rdf:type owl:Class ;
+                      rdfs:comment "选型采用定义类，非选型采用的普通类" .
+
+
+###  https://w3id.org/rsdo#ProfessionRangedAttribute
+rsdo:ProfessionRangedAttribute rdf:type owl:Class ;
+                               rdfs:subClassOf bpo:RangedAttribute ;
+                               owl:disjointWith rsdo:SharedRangedAttribute .
+
+
+###  https://w3id.org/rsdo#ProfessionSpace
+rsdo:ProfessionSpace rdf:type owl:Class ;
+                     rdfs:subClassOf bot:Zone .
+
+
+###  https://w3id.org/rsdo#ProfessionSurvey
+rsdo:ProfessionSurvey rdf:type owl:Class ;
+                      rdfs:comment "选型采用定义类，非选型采用的普通类" .
+
+
+###  https://w3id.org/rsdo#ProjectDesign
+rsdo:ProjectDesign rdf:type owl:Class .
+
+
+###  https://w3id.org/rsdo#ProjectSpace
+rsdo:ProjectSpace rdf:type owl:Class ;
+                  rdfs:subClassOf bot:Zone .
+
+
+###  https://w3id.org/rsdo#ProjectSurvey
+rsdo:ProjectSurvey rdf:type owl:Class .
+
+
+###  https://w3id.org/rsdo#Quantity
+rsdo:Quantity rdf:type owl:Class ;
+              rdfs:subClassOf qudt:Quantity ,
+                              rsdo:PhysicalAttribute ;
+              rdfs:comment "Unit module: a quantity attribute is a QUDT quantity, so its unit is assigned with qudt:unit (through rsdo:hasUnit) and its value with the attribute-value properties."@en ,
+                           "单位模块：量值型物理属性属于 QUDT 量，其单位用 qudt:unit（经 rsdo:hasUnit）关联到 QUDT 单位个体。"@zh .
+
+
+###  https://w3id.org/rsdo#RQD
+rsdo:RQD rdf:type owl:Class ;
+         rdfs:subClassOf rsdo:IndexAttribute .
+
+
+###  https://w3id.org/rsdo#Radius
+rsdo:Radius rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#Railway
+rsdo:Railway rdf:type owl:Class .
+
+
+###  https://w3id.org/rsdo#RailwayLine
+rsdo:RailwayLine rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:ProfessionDesign .
+
+
+###  https://w3id.org/rsdo#RailwayLine20082301
+rsdo:RailwayLine20082301 rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:RailwayLineCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#RailwayLine20112351-Ⅲ
+rsdo:RailwayLine20112351-Ⅲ rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:RailwayLineCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#RailwayLine20182332
+rsdo:RailwayLine20182332 rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:RailwayLineCrossSectionElement .
+
+
+###  https://w3id.org/rsdo#RailwayLineAttribute
+rsdo:RailwayLineAttribute rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#RailwayLineCrossSectionElement
+rsdo:RailwayLineCrossSectionElement rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#RailwayLineDistance
+rsdo:RailwayLineDistance rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#RailwayLineElement
+rsdo:RailwayLineElement rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#RailwayLineQuantity
+rsdo:RailwayLineQuantity rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:Quantity .
+
+
+###  https://w3id.org/rsdo#RailwayLineTractionTypeAttribute
+rsdo:RailwayLineTractionTypeAttribute rdf:type owl:Class ;
+                                      rdfs:subClassOf rsdo:RailwayLineAttribute .
+
+
+###  https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute
+rsdo:RailwayLineUsageAndFunctionAttribute rdf:type owl:Class ;
+                                          rdfs:subClassOf rsdo:RailwayLineAttribute .
+
+
+###  https://w3id.org/rsdo#RailwaySpace
+rsdo:RailwaySpace rdf:type owl:Class ;
+                  rdfs:subClassOf bot:Zone .
+
+
+###  https://w3id.org/rsdo#Ratio
+rsdo:Ratio rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelyComplete
+rsdo:RelativelyComplete rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RockIntegrityDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelyFragmented
+rsdo:RelativelyFragmented rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:RockIntegrityDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelyGood
+rsdo:RelativelyGood rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:RockQualityAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelyHardRock
+rsdo:RelativelyHardRock rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RockHardnessDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelyPoor
+rsdo:RelativelyPoor rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:RockQualityAttribute .
+
+
+###  https://w3id.org/rsdo#RelativelySoftRock
+rsdo:RelativelySoftRock rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:RockHardnessDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#ResidualSoil
+rsdo:ResidualSoil rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#ReverseCutTunnelPortal
+rsdo:ReverseCutTunnelPortal rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement
+rsdo:RightAuxiliaryRetainingWallElement rdf:type owl:Class ;
+                                        rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#RightPierColumnElement
+rsdo:RightPierColumnElement rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#RightSideWallElement
+rsdo:RightSideWallElement rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#RightWingWallElement
+rsdo:RightWingWallElement rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#RockAttribute
+rsdo:RockAttribute rdf:type owl:Class ;
+                   rdfs:subClassOf rsdo:GeologicalAttribute ;
+                   rdfs:comment "自带" .
+
+
+###  https://w3id.org/rsdo#RockElement
+rsdo:RockElement rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:GeologyElement ;
+                 owl:disjointWith rsdo:SoilElement .
+
+
+###  https://w3id.org/rsdo#RockHardnessDegreeAttribute
+rsdo:RockHardnessDegreeAttribute rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockIntegrityDegreeAttribute
+rsdo:RockIntegrityDegreeAttribute rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockLayerThicknessAttribute
+rsdo:RockLayerThicknessAttribute rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockQualityAttribute
+rsdo:RockQualityAttribute rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockStructuralShapeAttribute
+rsdo:RockStructuralShapeAttribute rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockStructureTypeAttribute
+rsdo:RockStructureTypeAttribute rdf:type owl:Class ;
+                                rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#RockWeatheringDegreeAttribute
+rsdo:RockWeatheringDegreeAttribute rdf:type owl:Class ;
+                                   rdfs:subClassOf rsdo:RockAttribute .
+
+
+###  https://w3id.org/rsdo#Rockfall
+rsdo:Rockfall rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#RockfallElement
+rsdo:RockfallElement rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength
+rsdo:SaturatedUniaxialCompressiveStrength rdf:type owl:Class ;
+                                          rdfs:subClassOf rsdo:Strength .
+
+
+###  https://w3id.org/rsdo#ShapeAttribute
+rsdo:ShapeAttribute rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#SharedAttribute
+rsdo:SharedAttribute rdf:type owl:Class ;
+                     rdfs:subClassOf bpo:Attribute .
+
+
+###  https://w3id.org/rsdo#SharedRangedAttribute
+rsdo:SharedRangedAttribute rdf:type owl:Class .
+
+
+###  https://w3id.org/rsdo#SimplySupportedBoxGirderLength
+rsdo:SimplySupportedBoxGirderLength rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:Length .
+
+
+###  https://w3id.org/rsdo#SingleLayerThickness
+rsdo:SingleLayerThickness rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Thickness .
+
+
+###  https://w3id.org/rsdo#SinglePressureTunnelPortal
+rsdo:SinglePressureTunnelPortal rdf:type owl:Class ;
+                                rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Size
+rsdo:Size rdf:type owl:Class ;
+          rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#SlightWeathering
+rsdo:SlightWeathering rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#SlightlyDense
+rsdo:SlightlyDense rdf:type owl:Class ;
+                   rdfs:subClassOf rsdo:SoilCompactionDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#SlightlyWet
+rsdo:SlightlyWet rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:SoilMoistureContentAttribute .
+
+
+###  https://w3id.org/rsdo#SlopeRatio
+rsdo:SlopeRatio rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:Ratio ;
+                owl:disjointWith rsdo:WaterContent .
+
+
+###  https://w3id.org/rsdo#SmallMileBearingStoneHeight
+rsdo:SmallMileBearingStoneHeight rdf:type owl:Class ;
+                                 rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#SoftPlastic
+rsdo:SoftPlastic rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:SoilStateAttribute .
+
+
+###  https://w3id.org/rsdo#SoftRock
+rsdo:SoftRock rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:RockHardnessDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#SoilAttribute
+rsdo:SoilAttribute rdf:type owl:Class ;
+                   rdfs:subClassOf rsdo:GeologicalAttribute .
+
+
+###  https://w3id.org/rsdo#SoilCompactionDegreeAttribute
+rsdo:SoilCompactionDegreeAttribute rdf:type owl:Class ;
+                                   rdfs:subClassOf rsdo:SoilAttribute .
+
+
+###  https://w3id.org/rsdo#SoilElement
+rsdo:SoilElement rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:GeologyElement .
+
+
+###  https://w3id.org/rsdo#SoilMoistureContentAttribute
+rsdo:SoilMoistureContentAttribute rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:SoilAttribute .
+
+
+###  https://w3id.org/rsdo#SoilStateAttribute
+rsdo:SoilStateAttribute rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:SoilAttribute .
+
+
+###  https://w3id.org/rsdo#SolePlateElement
+rsdo:SolePlateElement rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:TunnelBodyElement .
+
+
+###  https://w3id.org/rsdo#SolidElement
+rsdo:SolidElement rdf:type owl:Class ;
+                  rdfs:subClassOf bpo:Element .
+
+
+###  https://w3id.org/rsdo#SolidStructure
+rsdo:SolidStructure rdf:type owl:Class ;
+                    rdfs:subClassOf rsdo:RockStructureTypeAttribute .
+
+
+###  https://w3id.org/rsdo#Speed
+rsdo:Speed rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:FunctionalAttribute .
+
+
+###  https://w3id.org/rsdo#SteepTerrain
+rsdo:SteepTerrain rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:Topography .
+
+
+###  https://w3id.org/rsdo#StepQuantity
+rsdo:StepQuantity rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:Quantity .
+
+
+###  https://w3id.org/rsdo#SteppedEndWallElement
+rsdo:SteppedEndWallElement rdf:type owl:Class ;
+                           rdfs:subClassOf rsdo:TunnelPortalElement .
+
+
+###  https://w3id.org/rsdo#SteppedTunnelPortal
+rsdo:SteppedTunnelPortal rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#StraightCutTunnelPortal
+rsdo:StraightCutTunnelPortal rdf:type owl:Class ;
+                             rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Strength
+rsdo:Strength rdf:type owl:Class ;
+              rdfs:subClassOf rsdo:MaterialAttribute .
+
+
+###  https://w3id.org/rsdo#StructuralAttribute
+rsdo:StructuralAttribute rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight
+rsdo:SubgradeBoxGirderSectionHeight rdf:type owl:Class ;
+                                    rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#Subsidence
+rsdo:Subsidence rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#SubsidenceElement
+rsdo:SubsidenceElement rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#TangentialTunnelPortal
+rsdo:TangentialTunnelPortal rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Temperature
+rsdo:Temperature rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#TemperatureControl
+rsdo:TemperatureControl rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:FunctionalAttribute .
+
+
+###  https://w3id.org/rsdo#TemporalAttribute
+rsdo:TemporalAttribute rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:SharedAttribute .
+
+
+###  https://w3id.org/rsdo#Texture
+rsdo:Texture rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:MaterialAttribute .
+
+
+###  https://w3id.org/rsdo#ThickLayer
+rsdo:ThickLayer rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:RockLayerThicknessAttribute .
+
+
+###  https://w3id.org/rsdo#Thickness
+rsdo:Thickness rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#ThinLayer
+rsdo:ThinLayer rdf:type owl:Class ;
+               rdfs:subClassOf rsdo:RockLayerThicknessAttribute .
+
+
+###  https://w3id.org/rsdo#Topography
+rsdo:Topography rdf:type owl:Class ;
+                rdfs:subClassOf rsdo:ProfessionSurvey .
+
+
+###  https://w3id.org/rsdo#TopographyAttribute
+rsdo:TopographyAttribute rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#TopographyElement
+rsdo:TopographyElement rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#TopographyPosition
+rsdo:TopographyPosition rdf:type owl:Class ;
+                        rdfs:subClassOf rsdo:TopographyAttribute .
+
+
+###  https://w3id.org/rsdo#Track
+rsdo:Track rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:ProfessionDesign .
+
+
+###  https://w3id.org/rsdo#TrackElement
+rsdo:TrackElement rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:SolidElement ;
+                  rdfs:comment "这里只抽象出了一个构件，没有按照IFD扩展" .
+
+
+###  https://w3id.org/rsdo#TrackHeight
+rsdo:TrackHeight rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:Height .
+
+
+###  https://w3id.org/rsdo#TrackLineProjectionElevation
+rsdo:TrackLineProjectionElevation rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:Elevation .
+
+
+###  https://w3id.org/rsdo#TransverseBearingCenterDistance
+rsdo:TransverseBearingCenterDistance rdf:type owl:Class ;
+                                     rdfs:subClassOf rsdo:Distance .
+
+
+###  https://w3id.org/rsdo#TransverseSlabLength
+rsdo:TransverseSlabLength rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:Length .
+
+
+###  https://w3id.org/rsdo#TruncatedHornCutTunnelPortal
+rsdo:TruncatedHornCutTunnelPortal rdf:type owl:Class ;
+                                  rdfs:subClassOf rsdo:TunnelPortal .
+
+
+###  https://w3id.org/rsdo#Tunnel
+rsdo:Tunnel rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:ProfessionDesign .
+
+
+###  https://w3id.org/rsdo#Tunnel0201InnerContour
+rsdo:Tunnel0201InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#Tunnel0301InnerContour
+rsdo:Tunnel0301InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#Tunnel1001InnerContour
+rsdo:Tunnel1001InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#Tunnel1002InnerContour
+rsdo:Tunnel1002InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#Tunnel1201InnerContour
+rsdo:Tunnel1201InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#Tunnel1202InnerContour
+rsdo:Tunnel1202InnerContour rdf:type owl:Class ;
+                            rdfs:subClassOf rsdo:TunnelInnerContourElement .
+
+
+###  https://w3id.org/rsdo#TunnelAttribute
+rsdo:TunnelAttribute rdf:type owl:Class ;
+                     rdfs:subClassOf rsdo:ProfessionAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelBodyElement
+rsdo:TunnelBodyElement rdf:type owl:Class ;
+                       rdfs:subClassOf rsdo:SolidElement .
+
+
+###  https://w3id.org/rsdo#TunnelInnerContourElement
+rsdo:TunnelInnerContourElement rdf:type owl:Class ;
+                               rdfs:subClassOf rsdo:AbstractElement .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1
+rsdo:TunnelLiningCrossSectionConstructionRule1 rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:TunnelLiningCrossSectionConstructionRuleAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2
+rsdo:TunnelLiningCrossSectionConstructionRule2 rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:TunnelLiningCrossSectionConstructionRuleAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3
+rsdo:TunnelLiningCrossSectionConstructionRule3 rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:TunnelLiningCrossSectionConstructionRuleAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4
+rsdo:TunnelLiningCrossSectionConstructionRule4 rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:TunnelLiningCrossSectionConstructionRuleAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5
+rsdo:TunnelLiningCrossSectionConstructionRule5 rdf:type owl:Class ;
+                                               rdfs:subClassOf rsdo:TunnelLiningCrossSectionConstructionRuleAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute
+rsdo:TunnelLiningCrossSectionConstructionRuleAttribute rdf:type owl:Class ;
+                                                       rdfs:subClassOf rsdo:TunnelAttribute ;
+                                                       owl:disjointWith rsdo:TunnelPositionalRelationshipAttribute .
+
+
+###  https://w3id.org/rsdo#TunnelPortal
+rsdo:TunnelPortal rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:ProjectDesign .
+
+
+###  https://w3id.org/rsdo#TunnelPortalElement
+rsdo:TunnelPortalElement rdf:type owl:Class ;
+                         rdfs:subClassOf rsdo:SolidElement .
+
+
+###  https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute
+rsdo:TunnelPositionalRelationshipAttribute rdf:type owl:Class ;
+                                           rdfs:subClassOf rsdo:TunnelAttribute .
+
+
+###  https://w3id.org/rsdo#Unweathered
+rsdo:Unweathered rdf:type owl:Class ;
+                 rdfs:subClassOf rsdo:RockWeatheringDegreeAttribute .
+
+
+###  https://w3id.org/rsdo#VeryWet
+rsdo:VeryWet rdf:type owl:Class ;
+             rdfs:subClassOf rsdo:SoilMoistureContentAttribute .
+
+
+###  https://w3id.org/rsdo#VolcanicEruption
+rsdo:VolcanicEruption rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:ProjectSurvey .
+
+
+###  https://w3id.org/rsdo#VolcanicEruptionElement
+rsdo:VolcanicEruptionElement rdf:type owl:Class ;
+                             rdfs:subClassOf rsdo:GeologicalDisasterElement .
+
+
+###  https://w3id.org/rsdo#Volume
+rsdo:Volume rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#WaterContent
+rsdo:WaterContent rdf:type owl:Class ;
+                  rdfs:subClassOf rsdo:Ratio .
+
+
+###  https://w3id.org/rsdo#WaveSpeedRatioKv
+rsdo:WaveSpeedRatioKv rdf:type owl:Class ;
+                      rdfs:subClassOf rsdo:Ratio .
+
+
+###  https://w3id.org/rsdo#Weight
+rsdo:Weight rdf:type owl:Class ;
+            rdfs:subClassOf rsdo:PhysicalAttribute .
+
+
+###  https://w3id.org/rsdo#Wet
+rsdo:Wet rdf:type owl:Class ;
+         rdfs:subClassOf rsdo:SoilMoistureContentAttribute .
+
+
+###  https://w3id.org/rsdo#Width
+rsdo:Width rdf:type owl:Class ;
+           rdfs:subClassOf rsdo:GeometricAttribute .
+
+
+###  https://w3id.org/rsdo#WingWallTunnelPortal
+rsdo:WingWallTunnelPortal rdf:type owl:Class ;
+                          rdfs:subClassOf rsdo:TunnelPortal .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( bot:Building
+                bot:Site
+                bot:Space
+                bot:Storey
+                rsdo:ProfessionSpace
+                rsdo:ProjectSpace
+                rsdo:RailwaySpace
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Angle
+                rsdo:Area
+                rsdo:Depth
+                rsdo:Distance
+                rsdo:Elevation
+                rsdo:Height
+                rsdo:Length
+                rsdo:Radius
+                rsdo:Thickness
+                rsdo:Volume
+                rsdo:Width
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BeamBottomToBearingStoneTopHeight
+                rsdo:BeamBottomToPierTopHeight
+                rsdo:BearingStoneCalculatedHeight
+                rsdo:InitialTotalHeightOfBridgePier
+                rsdo:InnerContourHeight
+                rsdo:LargeMileBearingStoneHeight
+                rsdo:PierHeight
+                rsdo:SmallMileBearingStoneHeight
+                rsdo:SubgradeBoxGirderSectionHeight
+                rsdo:TrackHeight
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BeamBottomToBearingStoneTopHeight
+                rsdo:BeamBottomToPierTopHeight
+                rsdo:BearingStoneCalculatedHeight
+                rsdo:InitialTotalHeightOfBridgePier
+                rsdo:InnerContourHeight
+                rsdo:LargeMileBearingStoneHeight
+                rsdo:SmallMileBearingStoneHeight
+                rsdo:SubgradeBoxGirderSectionHeight
+                rsdo:TrackHeight
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BeamBottomToBearingStoneTopHeight
+                rsdo:BeamBottomToPierTopHeight
+                rsdo:BearingStoneCalculatedHeight
+                rsdo:InnerContourHeight
+                rsdo:LargeMileBearingStoneHeight
+                rsdo:SmallMileBearingStoneHeight
+                rsdo:SubgradeBoxGirderSectionHeight
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BeamBottomToBearingStoneTopHeight
+                rsdo:BeamBottomToPierTopHeight
+                rsdo:BearingStoneCalculatedHeight
+                rsdo:InnerContourHeight
+                rsdo:LargeMileBearingStoneHeight
+                rsdo:SmallMileBearingStoneHeight
+                rsdo:SubgradeBoxGirderSectionHeight
+                rsdo:TrackHeight
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BearingQuantity
+                rsdo:InnerContourCenterQuantity
+                rsdo:RailwayLineQuantity
+                rsdo:StepQuantity
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BearingToJointCenterlineDistance
+                rsdo:CrownTopToTrackSurfaceDistance
+                rsdo:CurveWallPointToBottomDistance
+                rsdo:LongitudinalBearingCenterDistance
+                rsdo:LongitudinalBearingToBeamEndDistance
+                rsdo:RailwayLineDistance
+                rsdo:TransverseBearingCenterDistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Blocky
+                rsdo:Columnar
+                rsdo:DebrisLike
+                rsdo:FragmentedBlocky
+                rsdo:GiantBlocky
+                rsdo:Layered
+                rsdo:Platy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BlockyStructure
+                rsdo:FracturedStructure
+                rsdo:GranularStructure
+                rsdo:LayeredStructure
+                rsdo:SolidStructure
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Bridge
+                rsdo:RailwayLine
+                rsdo:Track
+                rsdo:Tunnel
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:BridgeCrossSectionElement
+                rsdo:GeologicalDisasterElement
+                rsdo:LiningCrossSectionElement
+                rsdo:RailwayLineCrossSectionElement
+                rsdo:RailwayLineElement
+                rsdo:TopographyElement
+                rsdo:TunnelInnerContourElement
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Capacity
+                rsdo:Efficiency
+                rsdo:FlowRate
+                rsdo:Speed
+                rsdo:TemperatureControl
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:ChemicalAttribute
+                rsdo:FunctionalAttribute
+                rsdo:GeometricAttribute
+                rsdo:IndexAttribute
+                rsdo:PhysicalAttribute
+                rsdo:ShapeAttribute
+                rsdo:TemporalAttribute
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Complete
+                rsdo:ExtremelyFragmented
+                rsdo:Fragmented
+                rsdo:RelativelyComplete
+                rsdo:RelativelyFragmented
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CompletelyWeathered
+                rsdo:IntenseWeathering
+                rsdo:ModerateWeathering
+                rsdo:ResidualSoil
+                rsdo:SlightWeathering
+                rsdo:Unweathered
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Composition
+                rsdo:Elasticity
+                rsdo:MaterialType
+                rsdo:Strength
+                rsdo:Texture
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownArchElement
+                rsdo:CutAndCoverStructureElement
+                rsdo:SolePlateElement
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopCenterAngle
+                rsdo:CrownWaistCenterAngle
+                rsdo:ObliqueIntersectionAngle
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopRadius
+                rsdo:CrownWaistRadius
+                rsdo:CurveRadius
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopToTrackSurfaceDistance
+                rsdo:CurveWallPointToBottomDistance
+                rsdo:LongitudinalBearingCenterDistance
+                rsdo:LongitudinalBearingToBeamEndDistance
+                rsdo:RailwayLineDistance
+                rsdo:TransverseBearingCenterDistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopToTrackSurfaceDistance
+                rsdo:CurveWallPointToBottomDistance
+                rsdo:LongitudinalBearingCenterDistance
+                rsdo:RailwayLineDistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopToTrackSurfaceDistance
+                rsdo:CurveWallPointToBottomDistance
+                rsdo:LongitudinalBearingCenterDistance
+                rsdo:RailwayLineDistance
+                rsdo:TransverseBearingCenterDistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:CrownTopToTrackSurfaceDistance
+                rsdo:CurveWallPointToBottomDistance
+                rsdo:RailwayLineDistance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Dense
+                rsdo:MediumDensity
+                rsdo:SlightlyDense
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Duststorm
+                rsdo:Earthquake
+                rsdo:FrostHeaving
+                rsdo:KarstDisasters
+                rsdo:Landslide
+                rsdo:Mudflow
+                rsdo:Rockfall
+                rsdo:Subsidence
+                rsdo:VolcanicEruption
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:ExtraThickLayer
+                rsdo:MediumThickLayer
+                rsdo:ThickLayer
+                rsdo:ThinLayer
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:ExtremelyPoor
+                rsdo:Good
+                rsdo:Poor
+                rsdo:RelativelyGood
+                rsdo:RelativelyPoor
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:ExtremelySoftRock
+                rsdo:HardRock
+                rsdo:RelativelyHardRock
+                rsdo:RelativelySoftRock
+                rsdo:SoftRock
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:FlowablePlastic
+                rsdo:Hard
+                rsdo:HardPlastic
+                rsdo:Plastic
+                rsdo:SoftPlastic
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:FreightTransport
+                rsdo:PassengerAndFreightCoexistence
+                rsdo:PassengerTransport
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:InnerContourCenterQuantity
+                rsdo:RailwayLineQuantity
+                rsdo:StepQuantity
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:IntegrityIndex
+                rsdo:LiquidityIndex
+                rsdo:PlasticityIndex
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:IntegrityIndex
+                rsdo:LiquidityIndex
+                rsdo:PlasticityIndex
+                rsdo:RQD
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:LeftAuxiliaryRetainingWallElement
+                rsdo:LeftPierColumnElement
+                rsdo:LeftSideWallElement
+                rsdo:LeftWingWallElement
+                rsdo:MainEndWallElement
+                rsdo:MedianWallElement
+                rsdo:RightAuxiliaryRetainingWallElement
+                rsdo:RightPierColumnElement
+                rsdo:RightSideWallElement
+                rsdo:RightWingWallElement
+                rsdo:SteppedEndWallElement
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:LongitudinalSlope
+                rsdo:SlopeRatio
+                rsdo:WaterContent
+                rsdo:WaveSpeedRatioKv
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:MilepostNumber
+                rsdo:RailwayLineTractionTypeAttribute
+                rsdo:RailwayLineUsageAndFunctionAttribute
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:ProfessionDesign
+                rsdo:ProfessionSurvey
+                rsdo:ProjectDesign
+                rsdo:ProjectSurvey
+                rsdo:Railway
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:RailwayLine20082301
+                rsdo:RailwayLine20112351-Ⅲ
+                rsdo:RailwayLine20182332
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:RockHardnessDegreeAttribute
+                rsdo:RockIntegrityDegreeAttribute
+                rsdo:RockLayerThicknessAttribute
+                rsdo:RockQualityAttribute
+                rsdo:RockStructuralShapeAttribute
+                rsdo:RockStructureTypeAttribute
+                rsdo:RockWeatheringDegreeAttribute
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:SlightlyWet
+                rsdo:VeryWet
+                rsdo:Wet
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:Tunnel0201InnerContour
+                rsdo:Tunnel0301InnerContour
+                rsdo:Tunnel1001InnerContour
+                rsdo:Tunnel1002InnerContour
+                rsdo:Tunnel1201InnerContour
+                rsdo:Tunnel1202InnerContour
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( rsdo:TunnelLiningCrossSectionConstructionRule1
+                rsdo:TunnelLiningCrossSectionConstructionRule2
+                rsdo:TunnelLiningCrossSectionConstructionRule3
+                rsdo:TunnelLiningCrossSectionConstructionRule4
+                rsdo:TunnelLiningCrossSectionConstructionRule5
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.20) https://github.com/owlcs/owlapi/

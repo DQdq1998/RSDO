@@ -1,0 +1,3067 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/rsdo"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/rsdo"
+     versionIRI="https://w3id.org/rsdo/1.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="bot" IRI="https://w3id.org/bot#"/>
+    <Prefix name="bpo" IRI="https://w3id.org/bpo#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="rsdo" IRI="https://w3id.org/rsdo#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="schema" IRI="https://schema.org/"/>
+    <Import>https://w3id.org/bpo/1-2</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+        <Literal>2025-06-10</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Qiang Du</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="en">The Railway Survey and Design Ontology (RSDO) is a modular ontology for railway survey and design information modelling. It is organised in five modules - spatial, complementary semantic, component, attribute and unit - and reuses the Building Topology Ontology (BOT) and the Building Product Ontology (BPO).</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:license"/>
+        <Literal>https://creativecommons.org/licenses/by/4.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:modified"/>
+        <Literal>2026-11-03</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="en">Railway Survey and Design Ontology (RSDO)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="zh">铁路勘测设计本体 (RSDO)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal>rsdo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal>https://w3id.org/rsdo#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <Literal>https://w3id.org/rsdo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="qudt:Quantity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bot:Building"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bot:Site"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bot:Space"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bot:Storey"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bot:Zone"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bpo:Attribute"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bpo:Element"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bpo:RangedAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#AA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#AB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BallastedTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BeamJointWidth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BearingQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BearingToJointCenterlineDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Blocky"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BlockyStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Bridge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#BridgeCrossSectionElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Capacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ChemicalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Columnar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CombinedTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Complete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CompletelyWeathered"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Composition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ConventionalSpeedRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownArchElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownTopCenterAngle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownTopRadius"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistCenterAngle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistRadius"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CurveRadius"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CurvedTangentTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#CutAndCoverStructureElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#DA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#DB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#DebrisLike"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Dense"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Density"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Depth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#DesignTrackElevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Diesel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Duststorm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#DuststormElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#EA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#EB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#EarthquakeElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#EavesCutTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Efficiency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Elasticity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Electric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Elevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#EndWallTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ExtraThickLayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyFragmented"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyPoor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ExtremelySoftRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FlowRate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FlowablePlastic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FracturedStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FragmentedBlocky"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FreightRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FreightTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FrostHeaving"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FrostHeavingElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GeologicalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Geology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GeologyElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GiantBlocky"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Good"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GradeⅠRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GradeⅡRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GradeⅢRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GradeⅣRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GradeⅤRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#GranularStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Hard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#HardPlastic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#HardRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Hardness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#HighSpeedRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Hydrology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCrownPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourLeftArchFootPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourLeftArchWaistPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourMaxSpanPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourMinSpanPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourOffsetThickness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourRightArchFootPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#InnerContourRightArchWaistPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#IntegrityIndex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#IntenseWeathering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Intensity6Earthquake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Intensity7Earthquake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Intensity8Earthquake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Intensity9Earthquake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#IntercityRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#KarstDisasters"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#KarstDisastersElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Landslide"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LandslideElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LateralPressureTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Layered"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LayeredStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LeftPierColumnElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LeftSideWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LeftWingWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftArchWaistPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningRightArchWaistPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningRightCurvedSideWallPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiningTopCrownRingPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LiquidityIndex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalSlabLength"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalSlope"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MainEndWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Mass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MaterialType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MedianWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MediumDensity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MediumThickLayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MilepostNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ModerateWeathering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Mudflow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#MudflowElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ObliqueIntersectionAngle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ObliqueToTunnelAxis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#OrthogonalToTunnelAxis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PassengerAndFreightCoexistence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PassengerDedicatedLineRailway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PassengerTransport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PeakAcceleration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PierHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PillarTypeTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Plastic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#PlasticityIndex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Platy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Poor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Porosity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProfessionRangedAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProjectDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProjectSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RQD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20082301"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20112351-Ⅲ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20182332"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RailwaySpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelyGood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelyPoor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ResidualSoil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ReverseCutTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RightPierColumnElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RightSideWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RightWingWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Rockfall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#RockfallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ShapeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SharedRangedAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SimplySupportedBoxGirderLength"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SingleLayerThickness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SinglePressureTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Size"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SlightWeathering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SlightlyDense"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SlightlyWet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SlopeRatio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoftPlastic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoilAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoilElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SolePlateElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SolidStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Speed"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SteepTerrain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#StepQuantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SteppedEndWallElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SteppedTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#StraightCutTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Strength"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#StructuralAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Subsidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#SubsidenceElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TangentialTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TemperatureControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TemporalAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Texture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ThickLayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Thickness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#ThinLayer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Topography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TopographyAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TopographyElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TopographyPosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Track"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TrackElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TrackHeight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TrackLineProjectionElevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TransverseSlabLength"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TruncatedHornCutTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0201InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0301InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1001InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1002InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1201InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1202InnerContour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Unweathered"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#VeryWet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#VolcanicEruption"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#VolcanicEruptionElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Volume"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#WaterContent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#WaveSpeedRatioKv"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Weight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Wet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#Width"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/rsdo#WingWallTunnelPortal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="qudt:unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#RailwaySemanticBelongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProfessionSemantic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProjectSemantic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasRailwaySemantic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#professionSemanticBelongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#projectSemanticBelongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://w3id.org/rsdo#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://w3id.org/rsdo#hasXCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://w3id.org/rsdo#hasYCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://w3id.org/rsdo#hasZCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://w3id.org/rsdo#isInScenicAreaOrTown"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="https://w3id.org/rsdo#GradeⅠRock"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://w3id.org/rsdo#RockElement"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                <Class IRI="https://w3id.org/rsdo#Complete"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                <Class IRI="https://w3id.org/rsdo#HardRock"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://w3id.org/rsdo#GradeⅡRock"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Complete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#HardRock"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://w3id.org/rsdo#GradeⅢRock"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Complete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#HardRock"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://w3id.org/rsdo#GradeⅣRock"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Complete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="https://w3id.org/rsdo#GradeⅤRock"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#ExtremelyFragmented"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#ExtremelySoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="https://w3id.org/rsdo#RockElement"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="bpo:hasAttribute"/>
+                    <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#AA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#AB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+        <Class abbreviatedIRI="bpo:Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Area"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BallastedTrack"/>
+        <Class IRI="https://w3id.org/rsdo#Track"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+        <Class IRI="https://w3id.org/rsdo#Track"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BeamJointWidth"/>
+        <Class IRI="https://w3id.org/rsdo#Width"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BearingQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BearingToJointCenterlineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Blocky"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BlockyStructure"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BottomAndTrackFoundationLeftIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BottomAndTrackFoundationRightIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Bridge"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#BridgeCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅠDoubleBlockBallastlessTrack"/>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅠSlabBallastlessTrack"/>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CRTSⅢSlabBallastlessTrack"/>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Capacity"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ChemicalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Columnar"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CombinedTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Complete"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CompletelyWeathered"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Composition"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ConventionalSpeedRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownArchElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownTopCenterAngle"/>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownTopRadius"/>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistCenterAngle"/>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistRadius"/>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CurveRadius"/>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CurvedTangentTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#CutAndCoverStructureElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#DA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#DB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#DebrisLike"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Dense"/>
+        <Class IRI="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Density"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Depth"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#DesignTrackElevation"/>
+        <Class IRI="https://w3id.org/rsdo#Elevation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Diesel"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Duststorm"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#DuststormElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#EA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#EB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#EarthquakeElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#EavesCutTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Efficiency"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Elasticity"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Electric"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Elevation"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#EndWallTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ExtraThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyFragmented"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyPoor"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ExtremelySoftRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FA"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FB"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FlowRate"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FlowablePlastic"/>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FracturedStructure"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FragmentedBlocky"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FreightRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FreightTransport"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FrostHeaving"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FrostHeavingElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GeologicalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Geology"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GeologyElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GiantBlocky"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Good"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GradeⅠRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GradeⅡRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GradeⅢRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GradeⅣRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GradeⅤRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#GranularStructure"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Hard"/>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#HardPlastic"/>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#HardRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Hardness"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#HighSpeedRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Hydrology"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftLowerIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeLeftUpperIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightLowerIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourAndBaseFlangeRightUpperIntersection"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCrownPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourLeftArchFootPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourLeftArchWaistPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourMaxSpanPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourMinSpanPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourOffsetThickness"/>
+        <Class IRI="https://w3id.org/rsdo#Thickness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourRightArchFootPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#InnerContourRightArchWaistPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#IntegrityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#IntenseWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Intensity6Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Intensity7Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Intensity8Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Intensity9Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#IntercityRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#KarstDisasters"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#KarstDisastersElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Landslide"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LandslideElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LateralPressureTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Layered"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LayeredStructure"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LeftPierColumnElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LeftSideWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LeftWingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchMaxBuriedDepthPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchSegmentLeftPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningInvertedArchSegmentRightPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftArchWaistPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftCurvedSideWallPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftTransformationArcSegmentPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningLeftTransitionArcSegmentPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningRightArchWaistPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningRightCurvedSideWallPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningRightTransformationArcSegmentPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningRightTransitionArcSegmentPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiningTopCrownRingPoint"/>
+        <Class IRI="https://w3id.org/rsdo#ControlPointAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LiquidityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalSlabLength"/>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalSlope"/>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MainEndWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Mass"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MaterialType"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MedianWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MediumDensity"/>
+        <Class IRI="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MediumThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MilepostNumber"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ModerateWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Mudflow"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#MudflowElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ObliqueIntersectionAngle"/>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ObliqueToTunnelAxis"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#OrthogonalToTunnelAxis"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PassengerAndFreightCoexistence"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PassengerAndFreightCoexistingRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PassengerDedicatedLineRailway"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PassengerTransport"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PeakAcceleration"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PierHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PillarTypeTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Plastic"/>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#PlasticityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Platy"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Poor"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Porosity"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+        <Class abbreviatedIRI="bpo:Attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ProfessionRangedAttribute"/>
+        <Class abbreviatedIRI="bpo:RangedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSpace"/>
+        <Class abbreviatedIRI="bot:Zone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ProjectSpace"/>
+        <Class abbreviatedIRI="bot:Zone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+        <Class abbreviatedIRI="qudt:Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RQD"/>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20082301"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20112351-Ⅲ"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20182332"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RailwaySpace"/>
+        <Class abbreviatedIRI="bot:Zone"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelyGood"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelyPoor"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ResidualSoil"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ReverseCutTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RightPierColumnElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RightSideWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RightWingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologyElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Rockfall"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#RockfallElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SaturatedUniaxialCompressiveStrength"/>
+        <Class IRI="https://w3id.org/rsdo#Strength"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ShapeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+        <Class abbreviatedIRI="bpo:Attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SimplySupportedBoxGirderLength"/>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SingleLayerThickness"/>
+        <Class IRI="https://w3id.org/rsdo#Thickness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SinglePressureTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Size"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SlightWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SlightlyDense"/>
+        <Class IRI="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SlightlyWet"/>
+        <Class IRI="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SlopeRatio"/>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoftPlastic"/>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoilAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoilCompactionDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SoilAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoilElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologyElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SoilAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SoilStateAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SoilAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SolePlateElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelBodyElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+        <Class abbreviatedIRI="bpo:Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SolidStructure"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Speed"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SteepTerrain"/>
+        <Class IRI="https://w3id.org/rsdo#Topography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#StepQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SteppedEndWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SteppedTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#StraightCutTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Strength"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#StructuralAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Subsidence"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#SubsidenceElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TangentialTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Temperature"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TemperatureControl"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TemporalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Texture"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Thickness"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#ThinLayer"/>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Topography"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TopographyAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TopographyElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TopographyPosition"/>
+        <Class IRI="https://w3id.org/rsdo#TopographyAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Track"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TrackElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TrackHeight"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TrackLineProjectionElevation"/>
+        <Class IRI="https://w3id.org/rsdo#Elevation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TransverseSlabLength"/>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TruncatedHornCutTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0201InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0301InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1001InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1002InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1201InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1202InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelBodyElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectDesign"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortalElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Unweathered"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#VeryWet"/>
+        <Class IRI="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#VolcanicEruption"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#VolcanicEruptionElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Volume"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#WaterContent"/>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#WaveSpeedRatioKv"/>
+        <Class IRI="https://w3id.org/rsdo#Ratio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Weight"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Wet"/>
+        <Class IRI="https://w3id.org/rsdo#SoilMoistureContentAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#Width"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://w3id.org/rsdo#WingWallTunnelPortal"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPortal"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="bot:Building"/>
+        <Class abbreviatedIRI="bot:Site"/>
+        <Class abbreviatedIRI="bot:Space"/>
+        <Class abbreviatedIRI="bot:Storey"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSpace"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSpace"/>
+        <Class IRI="https://w3id.org/rsdo#RailwaySpace"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#AbstractElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolidElement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Angle"/>
+        <Class IRI="https://w3id.org/rsdo#Area"/>
+        <Class IRI="https://w3id.org/rsdo#Depth"/>
+        <Class IRI="https://w3id.org/rsdo#Distance"/>
+        <Class IRI="https://w3id.org/rsdo#Elevation"/>
+        <Class IRI="https://w3id.org/rsdo#Height"/>
+        <Class IRI="https://w3id.org/rsdo#Length"/>
+        <Class IRI="https://w3id.org/rsdo#Radius"/>
+        <Class IRI="https://w3id.org/rsdo#Thickness"/>
+        <Class IRI="https://w3id.org/rsdo#Volume"/>
+        <Class IRI="https://w3id.org/rsdo#Width"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BallastedTrack"/>
+        <Class IRI="https://w3id.org/rsdo#BallastlessTrack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+        <Class IRI="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#PierHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+        <Class IRI="https://w3id.org/rsdo#TrackHeight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+        <Class IRI="https://w3id.org/rsdo#InitialTotalHeightOfBridgePier"/>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+        <Class IRI="https://w3id.org/rsdo#TrackHeight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToBearingStoneTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BeamBottomToPierTopHeight"/>
+        <Class IRI="https://w3id.org/rsdo#BearingStoneCalculatedHeight"/>
+        <Class IRI="https://w3id.org/rsdo#InnerContourHeight"/>
+        <Class IRI="https://w3id.org/rsdo#LargeMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SmallMileBearingStoneHeight"/>
+        <Class IRI="https://w3id.org/rsdo#SubgradeBoxGirderSectionHeight"/>
+        <Class IRI="https://w3id.org/rsdo#TrackHeight"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BearingQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#StepQuantity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BearingToJointCenterlineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Blocky"/>
+        <Class IRI="https://w3id.org/rsdo#Columnar"/>
+        <Class IRI="https://w3id.org/rsdo#DebrisLike"/>
+        <Class IRI="https://w3id.org/rsdo#FragmentedBlocky"/>
+        <Class IRI="https://w3id.org/rsdo#GiantBlocky"/>
+        <Class IRI="https://w3id.org/rsdo#Layered"/>
+        <Class IRI="https://w3id.org/rsdo#Platy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BlockyStructure"/>
+        <Class IRI="https://w3id.org/rsdo#FracturedStructure"/>
+        <Class IRI="https://w3id.org/rsdo#GranularStructure"/>
+        <Class IRI="https://w3id.org/rsdo#LayeredStructure"/>
+        <Class IRI="https://w3id.org/rsdo#SolidStructure"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Bridge"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine"/>
+        <Class IRI="https://w3id.org/rsdo#Track"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#BridgeCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#GeologicalDisasterElement"/>
+        <Class IRI="https://w3id.org/rsdo#LiningCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineCrossSectionElement"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineElement"/>
+        <Class IRI="https://w3id.org/rsdo#TopographyElement"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelInnerContourElement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Capacity"/>
+        <Class IRI="https://w3id.org/rsdo#Efficiency"/>
+        <Class IRI="https://w3id.org/rsdo#FlowRate"/>
+        <Class IRI="https://w3id.org/rsdo#Speed"/>
+        <Class IRI="https://w3id.org/rsdo#TemperatureControl"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ChemicalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#FunctionalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#GeometricAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#IndexAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#PhysicalAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#ShapeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#TemporalAttribute"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Complete"/>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyFragmented"/>
+        <Class IRI="https://w3id.org/rsdo#Fragmented"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelyComplete"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelyFragmented"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CompletelyWeathered"/>
+        <Class IRI="https://w3id.org/rsdo#IntenseWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#ModerateWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#ResidualSoil"/>
+        <Class IRI="https://w3id.org/rsdo#SlightWeathering"/>
+        <Class IRI="https://w3id.org/rsdo#Unweathered"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Composition"/>
+        <Class IRI="https://w3id.org/rsdo#Elasticity"/>
+        <Class IRI="https://w3id.org/rsdo#MaterialType"/>
+        <Class IRI="https://w3id.org/rsdo#Strength"/>
+        <Class IRI="https://w3id.org/rsdo#Texture"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownArchElement"/>
+        <Class IRI="https://w3id.org/rsdo#CutAndCoverStructureElement"/>
+        <Class IRI="https://w3id.org/rsdo#SolePlateElement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopCenterAngle"/>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistCenterAngle"/>
+        <Class IRI="https://w3id.org/rsdo#ObliqueIntersectionAngle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopRadius"/>
+        <Class IRI="https://w3id.org/rsdo#CrownWaistRadius"/>
+        <Class IRI="https://w3id.org/rsdo#CurveRadius"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingToBeamEndDistance"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalBearingCenterDistance"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+        <Class IRI="https://w3id.org/rsdo#TransverseBearingCenterDistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#CrownTopToTrackSurfaceDistance"/>
+        <Class IRI="https://w3id.org/rsdo#CurveWallPointToBottomDistance"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineDistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Dense"/>
+        <Class IRI="https://w3id.org/rsdo#MediumDensity"/>
+        <Class IRI="https://w3id.org/rsdo#SlightlyDense"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Diesel"/>
+        <Class IRI="https://w3id.org/rsdo#Electric"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Duststorm"/>
+        <Class IRI="https://w3id.org/rsdo#Earthquake"/>
+        <Class IRI="https://w3id.org/rsdo#FrostHeaving"/>
+        <Class IRI="https://w3id.org/rsdo#KarstDisasters"/>
+        <Class IRI="https://w3id.org/rsdo#Landslide"/>
+        <Class IRI="https://w3id.org/rsdo#Mudflow"/>
+        <Class IRI="https://w3id.org/rsdo#Rockfall"/>
+        <Class IRI="https://w3id.org/rsdo#Subsidence"/>
+        <Class IRI="https://w3id.org/rsdo#VolcanicEruption"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ExtraThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#MediumThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#ThickLayer"/>
+        <Class IRI="https://w3id.org/rsdo#ThinLayer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ExtremelyPoor"/>
+        <Class IRI="https://w3id.org/rsdo#Good"/>
+        <Class IRI="https://w3id.org/rsdo#Poor"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelyGood"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelyPoor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ExtremelySoftRock"/>
+        <Class IRI="https://w3id.org/rsdo#HardRock"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelyHardRock"/>
+        <Class IRI="https://w3id.org/rsdo#RelativelySoftRock"/>
+        <Class IRI="https://w3id.org/rsdo#SoftRock"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#FlowablePlastic"/>
+        <Class IRI="https://w3id.org/rsdo#Hard"/>
+        <Class IRI="https://w3id.org/rsdo#HardPlastic"/>
+        <Class IRI="https://w3id.org/rsdo#Plastic"/>
+        <Class IRI="https://w3id.org/rsdo#SoftPlastic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#FreightTransport"/>
+        <Class IRI="https://w3id.org/rsdo#PassengerAndFreightCoexistence"/>
+        <Class IRI="https://w3id.org/rsdo#PassengerTransport"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#InnerContourCenterQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineQuantity"/>
+        <Class IRI="https://w3id.org/rsdo#StepQuantity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#InnerContourOffsetThickness"/>
+        <Class IRI="https://w3id.org/rsdo#SingleLayerThickness"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#IntegrityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#LiquidityIndex"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#IntegrityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#LiquidityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#PlasticityIndex"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#IntegrityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#LiquidityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#PlasticityIndex"/>
+        <Class IRI="https://w3id.org/rsdo#RQD"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#LeftAuxiliaryRetainingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#LeftPierColumnElement"/>
+        <Class IRI="https://w3id.org/rsdo#LeftSideWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#LeftWingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#MainEndWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#MedianWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#RightAuxiliaryRetainingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#RightPierColumnElement"/>
+        <Class IRI="https://w3id.org/rsdo#RightSideWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#RightWingWallElement"/>
+        <Class IRI="https://w3id.org/rsdo#SteppedEndWallElement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#LongitudinalSlope"/>
+        <Class IRI="https://w3id.org/rsdo#SlopeRatio"/>
+        <Class IRI="https://w3id.org/rsdo#WaterContent"/>
+        <Class IRI="https://w3id.org/rsdo#WaveSpeedRatioKv"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#MilepostNumber"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineTractionTypeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLineUsageAndFunctionAttribute"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ObliqueToTunnelAxis"/>
+        <Class IRI="https://w3id.org/rsdo#OrthogonalToTunnelAxis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ProfessionAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedAttribute"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ProfessionDesign"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSurvey"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectDesign"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSurvey"/>
+        <Class IRI="https://w3id.org/rsdo#Railway"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#ProfessionRangedAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#SharedRangedAttribute"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20082301"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20112351-Ⅲ"/>
+        <Class IRI="https://w3id.org/rsdo#RailwayLine20182332"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#RockElement"/>
+        <Class IRI="https://w3id.org/rsdo#SoilElement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#RockHardnessDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockIntegrityDegreeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockLayerThicknessAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockQualityAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructuralShapeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockStructureTypeAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#RockWeatheringDegreeAttribute"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#SlightlyWet"/>
+        <Class IRI="https://w3id.org/rsdo#VeryWet"/>
+        <Class IRI="https://w3id.org/rsdo#Wet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#SlopeRatio"/>
+        <Class IRI="https://w3id.org/rsdo#WaterContent"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0201InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel0301InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1001InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1002InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1201InnerContour"/>
+        <Class IRI="https://w3id.org/rsdo#Tunnel1202InnerContour"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule1"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule2"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule3"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule4"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRule5"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="https://w3id.org/rsdo#TunnelLiningCrossSectionConstructionRuleAttribute"/>
+        <Class IRI="https://w3id.org/rsdo#TunnelPositionalRelationshipAttribute"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#RailwaySemanticBelongsTo"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProfessionSemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProjectSemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasRailwaySemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasUnit"/>
+        <ObjectProperty abbreviatedIRI="qudt:unit"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#professionSemanticBelongsTo"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://w3id.org/rsdo#projectSemanticBelongsTo"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://w3id.org/rsdo#RailwaySemanticBelongsTo"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasRailwaySemantic"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProfessionSemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#professionSemanticBelongsTo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProjectSemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#projectSemanticBelongsTo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+        <ObjectProperty IRI="https://w3id.org/rsdo#semanticBelongsTo"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProfessionSemantic"/>
+        <Class IRI="https://w3id.org/rsdo#ProfessionSpace"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasProjectSemantic"/>
+        <Class IRI="https://w3id.org/rsdo#ProjectSpace"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasSemantic"/>
+        <Class abbreviatedIRI="bot:Zone"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasUnit"/>
+        <Class IRI="https://w3id.org/rsdo#Quantity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://w3id.org/rsdo#hasUnit"/>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="https://w3id.org/rsdo#isInScenicAreaOrTown"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://w3id.org/rsdo#hasValue"/>
+        <Class abbreviatedIRI="bpo:Attribute"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="https://w3id.org/rsdo#isInScenicAreaOrTown"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#BallastedTrack</IRI>
+        <Literal>有无砟道床的是无砟轨道</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#BallastlessTrack</IRI>
+        <Literal>有碎石道床的是有砟轨道</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#LiningCrossSectionElement</IRI>
+        <Literal>是否还能分的更细</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#ProfessionDesign</IRI>
+        <Literal>选型采用定义类，非选型采用的普通类</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#ProfessionSurvey</IRI>
+        <Literal>选型采用定义类，非选型采用的普通类</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#Quantity</IRI>
+        <Literal xml:lang="en">Unit module: a quantity attribute is a QUDT quantity, so its unit is assigned with qudt:unit (through rsdo:hasUnit) and its value with the attribute-value properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#Quantity</IRI>
+        <Literal xml:lang="zh">单位模块：量值型物理属性属于 QUDT 量，其单位用 qudt:unit（经 rsdo:hasUnit）关联到 QUDT 单位个体。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#RockAttribute</IRI>
+        <Literal>自带</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#TrackElement</IRI>
+        <Literal>这里只抽象出了一个构件，没有按照IFD扩展</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#hasUnit</IRI>
+        <Literal xml:lang="en">Attaches a quantity attribute to its unit of measure; a sub-property of qudt:unit, ranging over QUDT unit individuals such as unit:MPA, unit:M, unit:MilliM or unit:DEG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/rsdo#hasUnit</IRI>
+        <Literal xml:lang="zh">将量值型属性与其计量单位关联，是 qudt:unit 的子属性；单位个体来自 QUDT。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>https://w3id.org/rsdo#hasUnit</IRI>
+        <Literal xml:lang="en">has unit of measure</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
