@@ -47,8 +47,6 @@ engineering objects, and the semantic views that relate them.
 | `rsdo.ttl` | Turtle | 89 KB | for RDF tooling / triple stores |
 | `rsdo.rdf` | RDF/XML | 128 KB | for RDFLib-based instance generation |
 | `rsdo.ofn` | OWL functional syntax | 81 KB | for OWL API / programmatic use |
-| `bot.ttl` | Turtle | 169 KB | BOT 0.3.2, the external topology vocabulary RSDO reuses (provided for convenience) |
-| `catalog-v001.xml` | XML catalog | — | optional; maps the RSDO IRI to the local files so that Protégé resolves them offline |
 
 All four serializations are isomorphic — loading any of them yields the
 ontology IRI `https://w3id.org/rsdo`, version IRI `https://w3id.org/rsdo/1.0`,
